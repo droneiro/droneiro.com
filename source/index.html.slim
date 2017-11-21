@@ -1,7 +1,54 @@
-.section
-  .container
+.hero.hero--full.section--dark
+  .container.text-align-center
+    .drone
+      - 4.times
+        span
+      = image_tag 'drone-miniature.svg'
+    .section__spacer--small
     .title.title--secondary Ainda sem registro?
-    .title.title--primary Voe tranquilamente com seu drone
+    .title.title--primary Voe tranquilamente<br> com seu drone
     .hero__divisor
-    .title.title--secondary Cuidamos de toda a burocracia necessária pra que você possa curtir seu drone com segurança e responsabilidade.
-    a.btn.btn--primary href='https://github.com/startae/middleman-startae' See the Github project
+    .title.title--tertiary Cuidamos de toda a burocracia necessária pra que você possa curtir seu drone com segurança e responsabilidade.
+    = link_to 'QUERO REGISTRAR MEU DRONE', '/registro', class: 'btn'
+  = image_tag 'hero-bg.png', class: 'hero__background'
+
+.section.section--white
+  .container.container--small.text-align-center
+    .title.title--primary.title--primary-small Anatel, Anac, Decea...
+    .section__spacer--small
+    .title.title--secondary Confuso com todas essas siglas?
+    .section__spacer
+    .title.title--tertiary Você não está sozinho. Muitos droneiros não sabem por onde começar a homologação da sua aeronave e por isso acabam deixando de lado esse passo importante.
+    .section__spacer
+    .title.title--tertiary Nós te ajudamos a entender que registros você deve fazer com base na sua aeronave e no seu perfil de uso além de te ajudar a concluir cada etapa dessa jornada.
+
+.section.section--purple
+  .container
+    .drone.drone--big
+      - 4.times
+        span
+      = image_tag 'drone-miniature.svg'
+
+.section.section--white
+  .container.container--small.text-align-center
+    .title.title--primary.title--primary-small Perguntas
+    .section__spacer
+  .container.container--small
+    - data.questions.each.with_index(1) do |item, index|
+      .question
+        input.question__input id="tab-#{index}" type="radio" name="tabs"
+        label.question__label for="tab-#{index}" = item.title
+        .question__answer
+          p = item.paragraph
+
+.section.section--dark.section--big
+  .container.text-align-center
+    .drone.drone--big
+      - 4.times
+        span
+      = image_tag 'drone-miniature.svg'
+    .section__spacer--small
+    .title.title--primary Pronto pra voar?
+    .hero__divisor
+    = link_to 'QUERO REGISTRAR MEU DRONE', '/registro', class: 'btn'
+  = image_tag 'hero-bg.png', class: 'hero__background'

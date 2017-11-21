@@ -9,8 +9,15 @@
   border-top: 1px solid rgba(white, .5)
   margin: 2em auto
 
-.hero_logo
-  width: 80px
+.hero__background
+  position: absolute
+  width: 100%
+  height: auto
+  bottom: 0
+
+  +bp(sm-only)
+    width: 220%
+    right: 0
 
 .hero--full
   height: 100vh

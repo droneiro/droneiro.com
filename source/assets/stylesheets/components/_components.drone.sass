@@ -1,0 +1,40 @@
+/// @group components
+/// @name drone
+
+.drone
+  position: relative
+  text-align: center
+
+  img
+    width: 6em
+    z-index: 1
+    position: relative
+    margin-top: 1em
+
+  span
+    content: ''
+    position: absolute
+    width: 4em
+    height: 4em
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    background-color: $color-blue
+    border-radius: 50%
+    animation: radar 6s linear infinite
+
+    @for $i from 1 through 5
+      &:nth-of-type(#{$i})
+        animation-delay: $i * -1.4s
+
+.drone--big img
+  width: 8em
+
+
+@keyframes radar
+  0%
+    transform: translate(-50%, -50%) scale(0)
+    opacity: .15
+  100%
+    transform: translate(-50%, -50%) scale(5)
+    opacity: 0

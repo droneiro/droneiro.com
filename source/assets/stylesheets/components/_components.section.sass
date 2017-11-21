@@ -2,6 +2,7 @@
 /// @name section
 
 .section
+  position: relative
   padding: 3em 0
   background-color: $color-lightgrey
 
@@ -17,13 +18,15 @@
   &--big
     margin-top: 4em
 
-.section--blue
-  background-color: $color-blue
-  color: white
-
-.section--gradient
-  background: linear-gradient(to bottom, $color-purple, $color-magenta)
+.section--dark
+  background: linear-gradient(to bottom, $color-bluegrey, $color-bluegrey-dark)
   color: white
 
 .section--white
   background-color: white
+
+.section--purple
+  background-color: $color-purple
+
+.section--big
+  padding: 9em 0

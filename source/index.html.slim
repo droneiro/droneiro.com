@@ -40,10 +40,12 @@
 
 .section.section--white
   .container.container--small.text-align-center
-    .title.title--primary.title--primary-small Perguntas
+    .title.title--primary.title--primary-small Dúvidas?
+    .section__spacer--small
     .section__spacer
-  .container.container--small
-    - data.questions.each.with_index(1) do |item, index|
+  .container.container--small.text-align-center
+    .btn.btn--secondary Fale com a gente agora mesmo!
+    / - data.questions.each.with_index(1) do |item, index|
       .question
         input.question__input id="tab-#{index}" type="radio" name="tabs"
         label.question__label for="tab-#{index}" = item.title

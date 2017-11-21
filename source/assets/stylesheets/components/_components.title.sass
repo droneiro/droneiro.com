@@ -1,0 +1,53 @@
+/// @group components
+/// @name title
+
+.title
+  margin: 0 auto
+
+  & + &
+    margin-top: .8em
+
+  +bp(md)
+    font-weight: lighter
+
+.title--primary
+  font-size: 2.4em
+  font-weight: 800
+
+  +bp(md)
+    font-size: 4.5em
+
+.title--primary-small
+  font-size: 2.4em
+
+  +bp(md)
+    font-size: 3em
+
+.title--secondary
+  font-size: 1.2em
+
+.title--tertiary
+  font-size: .9em
+  line-height: 1.6
+  opacity: .8
+  white-space: pre-wrap
+
+  +bp(md)
+    max-width: 70%
+
+.title--quaternary
+  text-transform: uppercase
+  font-size: .8em
+  font-weight: bold
+  letter-spacing: .2em
+
+.title--tab
+  font-size: 1.8em
+  font-weight: 800
+  margin-bottom: .8em
+
+  +bp(md)
+    font-size: 2.2em
+
+  .estate + &
+    margin-top: 1.6em

@@ -1,0 +1,55 @@
+/// @group components
+/// @name question
+
+.question
+  position: relative
+  width: 100%
+  overflow: hidden
+
+  & + &
+    border-top: 1px solid rgba(black, .1)
+
+.question__input
+  position: absolute
+  opacity: 0
+  z-index: -1
+
+  &:checked ~ .question__answer
+    max-height: 10em
+
+  & + .question__label:after
+    content: "\25BC"
+
+  &:checked + .question__label:after
+    transform: rotateX(180deg)
+
+.question__label
+  position: relative
+  display: block
+  padding: 0 0 0 1em
+  font-weight: bold
+  line-height: 3
+  cursor: pointer
+
+  &:after
+    position: absolute
+    right: 0
+    top: 0
+    display: block
+    width: 3em
+    height: 3em
+    line-height: 3
+    text-align: center
+    transition: all .35s
+    color: rgba(black, .1)
+
+.question__answer
+  max-height: 0
+  overflow: hidden
+  transition: max-height .2s
+
+  p
+    padding: 0 1em 1em 1em
+    line-height: 1.4
+    opacity: .6
+    font-size: .9em

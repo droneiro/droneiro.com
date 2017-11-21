@@ -1,0 +1,29 @@
+/// @group components
+/// @name section
+
+.section
+  padding: 3em 0
+  background-color: $color-lightgrey
+
+  +bp(md)
+    padding: 6em 0
+
+.section__spacer
+  margin-top: 2em
+
+  &--small
+    margin-top: 1em
+
+  &--big
+    margin-top: 4em
+
+.section--blue
+  background-color: $color-blue
+  color: white
+
+.section--gradient
+  background: linear-gradient(to bottom, $color-purple, $color-magenta)
+  color: white
+
+.section--white
+  background-color: white

@@ -1,0 +1,42 @@
+/// @group components
+/// @name step
+
+.step
+  display: flex
+
+  & + &
+    margin-top: 5em
+
+  &:nth-child(even)
+    flex-direction: row-reverse
+    text-align: right
+
+  > div
+    max-width: 50%
+
+.step__icon
+  width: 4em
+  height: 4em
+  border-radius: 50%
+  display: flex
+  justify-content: center
+  flex-direction: column
+  background-color: $color-magenta
+  font-weight: 700
+  box-shadow: 0 10px 20px rgba(black, .19)
+  margin: 0 2em
+  flex-shrink: 0
+
+  span
+    font-size: 2em
+    margin-top: -.15em
+
+.step__title
+  font-size: 1.2em
+  font-weight: 700
+
+.step__paragraph
+  font-size: .8em
+  line-height: 1.4
+  opacity: .7
+  margin-top: .8em

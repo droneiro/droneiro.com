@@ -1,18 +1,33 @@
 .visibility-hidden
   form.external-form.js-register-form cf-form=true
     input type="text" name="nome" id="nome" cf-questions="Perfeito! Você tomou a decisão certa!&&Eu estou aqui pra descobrir quais registros você precisa de acordo com o uso que pretende fazer do seu drone.&&Que tal começar me falando seu nome completo?" cf-input-placeholder="Digite o seu nome"
-    fieldset cf-questions="Belo nome, {nome}!&&Você pretende utilizar seu drone para qual tipo de atividade?" cf-input-placeholder="Escolha uma opção"
+    / fieldset cf-questions="Que nome bonito, {nome}!||Gostei do nome, {nome}||{nome}?! Que nome diferente... &&Você pretende utilizar seu drone para qual tipo de atividade?" cf-input-placeholder="Escolha uma opção"
+    fieldset cf-questions="Gostei do nome, {nome}!&&Você pretende utilizar seu drone para qual tipo de atividade?" cf-input-placeholder="Escolha uma opção"
       input type="radio" name="atividade" id="intro-yes" value="yes"
       label for="intro-yes" Recreativa
 
       input type="radio" name="atividade" id="intro-no" value="no"
       label for="intro-no" Profissional
-    input type="text" cf-questions="Legal! Eu também piloto só por diversão..." cf-conditional-atividade="yes"
-    input type="text" cf-questions="Uh... Temos um profissional aqui!" cf-conditional-atividade="no"
-    input type="text" name="nome" id="nome" cf-questions="Perfeito! Você tomou a decisão certa!&&Eu estou aqui pra descobrir quais registros você precisa de acordo com o uso que pretende fazer do seu drone.&&Que tal começar me falando seu nome completo?" cf-input-placeholder="Digite o seu nome"
-    input type="text" name="nome" id="nome" cf-questions="Perfeito! Você tomou a decisão certa!&&Eu estou aqui pra descobrir quais registros você precisa de acordo com o uso que pretende fazer do seu drone.&&Que tal começar me falando seu nome completo?" cf-input-placeholder="Digite o seu nome"
+    fieldset cf-questions="O seu drone já possui o selo da Anatel?" cf-input-placeholder="Escolha uma opção"
+      input type="radio" name="selo-anatel" id="intro-yes" value="yes"
+      label for="intro-yes" Sim
 
+      input type="radio" name="selo-anatel" id="intro-no" value="no"
+      label for="intro-no" Não
+
+      input type="radio" name="selo-anatel" id="intro-null" value="null"
+      label for="intro-null" Não faço ideia
+
+    / fieldset cf-questions="Sem problemas!||Fique tranquilo.||Relaxa!&&Dê uma olhadinha no seu drone e no seu rádio e veja se encontra algum selo com a marca da anatel nele.&&Encontrou?" cf-input-placeholder="Escolha uma opção"
+    fieldset cf-questions="Sem problemas!&&Dê uma olhadinha no seu drone e no seu rádio e veja se encontra algum selo com a marca da anatel nele. <br><br><a href='http://d2fvaoynuecth8.cloudfront.net/assets/00572/produtos/7200/milinfo-hobby-dji-mavic-pro-8.jpg' target='_blank'>Veja este exemplo →</a>&&Encontrou?" cf-input-placeholder="Escolha uma opção"
+      input type="radio" name="selo-anatel-2" id="intro-yes-2" value="yes" cf-conditional-selo-anatel="null"
+      label for="intro-yes-2" Encontrei!
+
+      input type="radio" name="selo-anatel-2" id="intro-no-2" value="no" cf-conditional-selo-anatel="null"
+      label for="intro-no-2" Não
+    input name="nome" id="nome" cf-questions="Que ótimo! Uma etapa a menos." cf-conditional-selo-anatel="yes"
+    input name="nome" id="nome" cf-questions="Que ótimo! Uma etapa a menos." cf-conditional-selo-anatel-2="yes"
 
 = javascript_include_tag 'https://code.jquery.com/jquery-3.2.1.min.js'
 = javascript_include_tag 'https://cf-4053.kxcdn.com/conversational-form/0.9.6/conversational-form.min.js'
-/ = javascript_include_tag 'registro.js'
+= javascript_include_tag 'registro.js'

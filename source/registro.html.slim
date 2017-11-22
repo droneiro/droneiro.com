@@ -1,0 +1,18 @@
+.visibility-hidden
+  form.external-form.js-register-form cf-form=true
+    input type="text" name="nome" id="nome" cf-questions="Perfeito! Você tomou a decisão certa!&&Eu estou aqui pra descobrir quais registros você precisa de acordo com o uso que pretende fazer do seu drone.&&Que tal começar me falando seu nome completo?" cf-input-placeholder="Digite o seu nome"
+    fieldset cf-questions="Belo nome, {nome}!&&Você pretende utilizar seu drone para qual tipo de atividade?" cf-input-placeholder="Escolha uma opção"
+      input type="radio" name="atividade" id="intro-yes" value="yes"
+      label for="intro-yes" Recreativa
+
+      input type="radio" name="atividade" id="intro-no" value="no"
+      label for="intro-no" Profissional
+    input type="text" cf-questions="Legal! Eu também piloto só por diversão..." cf-conditional-atividade="yes"
+    input type="text" cf-questions="Uh... Temos um profissional aqui!" cf-conditional-atividade="no"
+    input type="text" name="nome" id="nome" cf-questions="Perfeito! Você tomou a decisão certa!&&Eu estou aqui pra descobrir quais registros você precisa de acordo com o uso que pretende fazer do seu drone.&&Que tal começar me falando seu nome completo?" cf-input-placeholder="Digite o seu nome"
+    input type="text" name="nome" id="nome" cf-questions="Perfeito! Você tomou a decisão certa!&&Eu estou aqui pra descobrir quais registros você precisa de acordo com o uso que pretende fazer do seu drone.&&Que tal começar me falando seu nome completo?" cf-input-placeholder="Digite o seu nome"
+
+
+= javascript_include_tag 'https://code.jquery.com/jquery-3.2.1.min.js'
+= javascript_include_tag 'https://cf-4053.kxcdn.com/conversational-form/0.9.6/conversational-form.min.js'
+/ = javascript_include_tag 'registro.js'

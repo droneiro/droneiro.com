@@ -7,3 +7,13 @@ if ('addEventListener' in document) {
 		FastClick.attach(document.body);
 	}, false);
 }
+
+window.onscroll = window.onload = function() {
+  var previous;
+  if (window.pageYOffset > window.innerHeight / 2) {
+    document.body.classList.add('header-is-compact');
+  } else {
+    document.body.classList.remove('header-is-compact');
+  }
+  return previous = window.pageYOffset;
+};

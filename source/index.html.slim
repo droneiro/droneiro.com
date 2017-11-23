@@ -58,18 +58,20 @@
 .section.section--white
   .container.container--small.text-align-center
     .title.title--primary.title--primary-small Dúvidas?
-    .section__spacer--small
-    .section__spacer
-  .container.container--small.text-align-center
-    = link_to whatsapp('Olá, tenho uma dúvida sobre o serviço de registro do droneiro.com!'), class: 'btn btn--secondary', target: '_blank' do
-      .fa.fa-lg.fa-whatsapp
-      | Fale com a gente!
-    / - data.questions.each.with_index(1) do |item, index|
+    .section__spacer--big
+  .container.container--small
+    - data.questions.each.with_index(1) do |item, index|
       .question
         input.question__input id="tab-#{index}" type="radio" name="tabs"
         label.question__label for="tab-#{index}" = item.title
         .question__answer
           p = item.paragraph
+    .section__spacer--big
+  .container.container--small.text-align-center
+    .title.title--tertiary Sobrou alguma dúvida?
+    = link_to whatsapp('Olá, tenho uma dúvida sobre o serviço de registro do droneiro.com!'), class: 'btn btn--secondary', target: '_blank' do
+      .fa.fa-lg.fa-whatsapp
+      | Fale com a gente!
 
 .section.section--dark.section--big
   .container.text-align-center

@@ -20,10 +20,30 @@ function submitForm(e){
   });
 }
 
+var dispatcher = new cf.EventDispatcher();
+dispatcher.addEventListener(cf.FlowEvents.FLOW_UPDATE, function(event){
+  console.log(event);
+}, false);
+
 $(".js-register-form").conversationalForm({
   dictionaryData: {
     "group-placeholder": "Digite para filtrar a lista...",
     "input-no-filter": "Sem resultados para <strong>{input-value}</strong>"
-  }
+  },
+  userInterfaceOptions:{
+    controlElementsInAnimationDelay: 500,
+    robot: {
+      robotResponseTime: 0,
+      chainedResponseTime: 600
+    }
+  },
+  hideUserInputOnNoneTextInput: true,
+  eventDispatcher: dispatcher
 });
 
+function set_username(username){
+  username.replace(/\ /g, '+');
+  $('head').append('<style type="text/css">body .conversational-form cf-chat-response.user thumb{background-image: url(https://ui-avatars.com/api/?background=5B5AEC&color=ffffff&size=128&font-size=0.3&length=1&name='+username+') !important}</style>');
+}
+
+// set_username('kande');

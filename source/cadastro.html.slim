@@ -14,7 +14,7 @@ title: Droneiro — Cadastro
     input type="text" name="nome" id="nome" cf-questions="Perfeito! Você tomou a decisão certa!&&Estou aqui pra descobrir quais registros você precisa de acordo com o uso que pretende fazer do seu drone.&&Que tal começar me falando seu nome?" cf-input-placeholder="Digite o seu nome"
 
     / Email
-    input type="email" name="email" id="email" cf-questions="Gostei do nome, {nome}!&&Agora seu email...||{nome}?! Que nome peculiar...&&Qual o seu email?||'{nome}'. Que nome bonito!&&E seu email?" cf-input-placeholder="Digite o seu email"
+    input type="email" name="email" id="email" cf-questions="Gostei do nome, {nome}!&&Agora seu email...||{nome}?! Que nome peculiar...&&Qual o seu email?||{nome}! Que nome bonito!&&E seu email?" cf-input-placeholder="Digite o seu email"
 
     / Selo da Anatel
     fieldset cf-questions="O seu drone e rádio já possuem o selo da Anatel?" cf-input-placeholder="Escolha uma opção"
@@ -62,11 +62,15 @@ title: Droneiro — Cadastro
 
     / DECEA
     fieldset cf-questions="E no DECEA/SARPAS? Você já fez o cadastro?" cf-input-placeholder="Escolha uma opção" cf-conditional-peso="sim" cf-conditional-atividade="profissional"
-      input type="radio" name="anac" id="anac-yes" value="sim"
-      label for="anac-yes" Sim
+      input type="radio" name="decea" id="decea-yes" value="sim"
+      label for="decea-yes" Sim
 
-      input type="radio" name="anac" id="anac-no" value="não"
-      label for="anac-no" Não
+      input type="radio" name="decea" id="decea-no" value="não"
+      label for="decea-no" Não
+
+    / TODO
+    / Resultado de quais registros precisaram ser feitos
+    / TODO
 
     / CPF
     input type="text" name="cpf" id="cpf" cf-questions="Então vamos lá!&&Se você quiser mudar alguma resposta é só clicar em cima dela.&&Qual é o seu CPF?" cf-input-placeholder="Informe o seu CPF"

@@ -140,3 +140,15 @@ body .conversational-form
   cf-list-button:before,
   cf-list-button:after
     display: none
+
+.form-success
+  > div
+    opacity: 0
+    visibility: hidden
+    transform: translateX(2em)
+    transition: .2s
+
+    body.form-sent &
+      opacity: 1
+      visibility: visible
+      transform: translateX(0em)

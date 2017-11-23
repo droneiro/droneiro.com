@@ -24,7 +24,7 @@ title: Droneiro — Cadastro
       label for="intro-no" Não
 
     / Peso da aeronave
-    fieldset cf-questions="Sua aeronave pesa mais que 250gr?" cf-input-placeholder="Escolha uma opção"
+    fieldset cf-questions="Ok&&Sua aeronave pesa mais que 250gr?" cf-input-placeholder="Escolha uma opção"
       input type="radio" name="peso" id="peso-yes" value="yes"
       label for="peso-yes" Sim
 
@@ -40,7 +40,7 @@ title: Droneiro — Cadastro
       label for="anac-no" Não
 
     / Aeronavegabilidade
-    fieldset cf-questions="Sem problemas! Estou aqui pra resolver isso!&&Você vai voar com a aeronave fora do alcançe visual ou acima de 120 metros do nível do solo?&&Se você está começando agora, eu recomendo que não..." cf-input-placeholder="Escolha uma opção" cf-conditional-anac="no"
+    fieldset cf-questions="Sem problemas! Estou aqui pra resolver isso!&&Você vai voar com a aeronave fora do alcançe visual ou acima de 120 metros do nível do solo?&&Se você está começando agora, eu recomendo que não." cf-input-placeholder="Escolha uma opção" cf-conditional-anac="no"
       input type="radio" name="aeronavegabilidade" id="aeronavegabilidade-yes" value="yes"
       label for="aeronavegabilidade-yes" Sim
 
@@ -48,7 +48,7 @@ title: Droneiro — Cadastro
       label for="aeronavegabilidade-no" Não
 
     / CPF
-    input type="text" name="cpf" id="cpf" cf-questions="Então vamos lá!&&Se você quiser mudar alguma resposta é só clicar em cima dela.&&Qual é o seu CPF?||Vamos começar então!&&Se você quiser mudar alguma resposta é só clicar em cima dela.&&Preciso do seu CPF." cf-input-placeholder="Informe o seu CPF"
+    input type="text" name="cpf" id="cpf" cf-questions="Então vamos lá!&&Se você quiser mudar alguma resposta é só clicar em cima dela.&&Qual é o seu CPF?" cf-input-placeholder="Informe o seu CPF"
 
     / CEP
     input type="text" name="cep" id="cep" cf-questions="Qual é o seu CEP?&&<a href='http://www.buscacep.correios.com.br/sistemas/buscacep/' target='_blank'>Busca de CEP dos Correios →</a>" cf-input-placeholder="Informe o seu CEP"
@@ -81,7 +81,7 @@ title: Droneiro — Cadastro
           label for=model.parameterize = model
 
     / Número de série
-    input type="text" name="numero_de_serie" id="numero_de_serie" cf-questions="Qual é número de série do drone?" cf-input-placeholder="Digite o número de série"
+    input type="text" name="numero_de_serie" id="numero_de_serie" cf-questions="Qual é número de série do drone?&&Geralmente o número de série fica ao lado de um QR code após as iniciais SN (de serial number)" cf-input-placeholder="Digite o número de série"
 
     / TODO
     / Detalhe do que tem que ser feito e opção do usuário fazer sozinho.
@@ -97,6 +97,13 @@ title: Droneiro — Cadastro
 
       input type="radio" name="contato" id="contato-email" value="Email"
       label for="contato-email" Email
+
+.form-success.align-self-center.text-align-center
+  .title.title--primary.align-self-center 🚀
+  .section__spacer--small
+  .title.title--primary.title--primary-small Pronto!
+  .hero__divisor
+  .title.title--tertiary Você vai receber um email em algumas horas com o link para pagamento via PagSeguro.
 
 = javascript_include_tag 'https://code.jquery.com/jquery-3.2.1.min.js'
 = javascript_include_tag 'https://cf-4053.kxcdn.com/conversational-form/0.9.6/conversational-form.min.js'

@@ -3,6 +3,7 @@
 
 .header
   position: fixed
+  top: 0
   left: 0
   right: 0
   background-color: rgba(black, 0)
@@ -11,14 +12,11 @@
   display: flex
   justify-content: space-between
 
-  body.header-is-compact &
-    background-color: rgba(black, .1)
-
   .btn
     margin-right: 2em
     visibility: hidden
     opacity: 0
-    transition: .4s
+    transition: .2s .4s
 
     body.header-is-compact &
       opacity: 1

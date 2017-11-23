@@ -1,0 +1,102 @@
+---
+title: Droneiro — Cadastro! 🚀
+---
+
+= link_to '/', target: '_blank' do
+  = image_tag 'drone-icon.svg', class: 'hero__logo'
+
+.visibility-hidden
+  form.external-form.js-register-form
+    input type="hidden" name="primeiro-nome"
+
+    / Nome
+    input type="text" name="nome" id="nome" cf-questions="Perfeito! Você tomou a decisão certa!&&Eu estou aqui pra descobrir quais registros você precisa de acordo com o uso que pretende fazer do seu drone.&&Que tal começar me falando seu nome?" cf-input-placeholder="Digite o seu nome"
+
+    / Email
+    input type="email" name="email" id="email" cf-questions="Gostei do nome, {nome}!&&Agora seu email...||{nome}?! Que nome peculiar...&&Qual o seu email?||'{nome}'. Que nome bonito!&&E seu email?" cf-input-placeholder="Digite o seu email"
+
+    fieldset cf-questions="O seu drone e rádio já possuem o selo da Anatel?" cf-input-placeholder="Escolha uma opção"
+      input type="radio" name="selo-anatel" id="intro-yes" value="yes"
+      label for="intro-yes" Sim
+
+      input type="radio" name="selo-anatel" id="intro-no" value="no"
+      label for="intro-no" Não
+
+    / Peso da aeronave
+    fieldset cf-questions="Sua aeronave pesa mais que 250gr?" cf-input-placeholder="Escolha uma opção"
+      input type="radio" name="peso" id="peso-yes" value="yes"
+      label for="peso-yes" Sim
+
+      input type="radio" name="peso" id="peso-no" value="no"
+      label for="peso-no" Não
+
+    / SISANT
+    fieldset cf-questions="Você já possui um cadastro no SISANT da ANAC?" cf-input-placeholder="Escolha uma opção" cf-conditional-peso="yes"
+      input type="radio" name="anac" id="anac-yes" value="yes"
+      label for="anac-yes" Sim
+
+      input type="radio" name="anac" id="anac-no" value="no"
+      label for="anac-no" Não
+
+    / Aeronavegabilidade
+    fieldset cf-questions="Sem problemas! Estou aqui pra resolver isso!&&Você vai voar com a aeronave fora do alcançe visual ou acima de 120 metros do nível do solo?&&Se você está começando agora, eu recomendo que não..." cf-input-placeholder="Escolha uma opção" cf-conditional-anac="no"
+      input type="radio" name="aeronavegabilidade" id="aeronavegabilidade-yes" value="yes"
+      label for="aeronavegabilidade-yes" Sim
+
+      input type="radio" name="aeronavegabilidade" id="aeronavegabilidade-no" value="no"
+      label for="aeronavegabilidade-no" Não
+
+    / CPF
+    input type="text" name="cpf" id="cpf" cf-questions="Então vamos lá!&&Se você quiser mudar alguma resposta é só clicar em cima dela.&&Qual é o seu CPF?||Vamos começar então!&&Se você quiser mudar alguma resposta é só clicar em cima dela.&&Preciso do seu CPF." cf-input-placeholder="Informe o seu CPF"
+
+    / CEP
+    input type="text" name="cep" id="cep" cf-questions="Qual é o seu CEP?&&<a href='http://www.buscacep.correios.com.br/sistemas/buscacep/' target='_blank'>Busca de CEP dos Correios →</a>" cf-input-placeholder="Informe o seu CEP"
+
+    / Endereço
+    input type="text" name="endereco" id="endereco" cf-questions="Qual é o seu endereço completo?&&Estado, cidade, bairro... Tudo!" cf-input-placeholder="Diga seu endereço completo"
+
+    / Telefone
+    input type="text" name="telefone" id="telefone" cf-questions="Agora o seu telefone.&&Não se esqueça do código de área, ok?" cf-input-placeholder="Digite o seu telefone"
+
+    / Atividade Recreativa / Profissional
+    fieldset cf-questions="Você pretende utilizar seu drone para qual tipo de atividade?||Que tipo de uso você fará do drone?" cf-input-placeholder="Escolha uma opção"
+      input type="radio" name="atividade" id="intro-yes" value="yes"
+      label for="intro-yes" Recreativo
+
+      input type="radio" name="atividade" id="intro-no" value="no"
+      label for="intro-no" Profissional
+
+    / Marca
+    fieldset cf-questions="Qual a marca do seu drone?||Qual é o fabricante do seu drone?" cf-input-placeholder="Escolha o fabricante"
+      - data.drones.each do |brand|
+        input type="radio" name="marca" id=brand.title.parameterize value=brand.title.parameterize
+        label for=brand.title.parameterize = brand.title
+
+    / Modelo
+    - data.drones.each do |brand|
+      fieldset cf-questions="E o modelo?||Qual o modelo?||O modelo?" cf-input-placeholder="Escolha o modelo"
+        - brand.models.each do |model|
+          input type="radio" name=brand.title id=model.parameterize value=model cf-conditional-marca=brand.title.parameterize
+          label for=model.parameterize = model
+
+    / Número de série
+    input type="text" name="numero_de_serie" id="numero_de_serie" cf-questions="Qual é número de série do drone?" cf-input-placeholder="Digite o número de série"
+
+    / TODO
+    / Detalhe do que tem que ser feito e opção do usuário fazer sozinho.
+    / TODO
+
+    / Forma preferida de contato
+    fieldset cf-questions="Caso eu precise confirmar algum detalhe sobre seu registro...&&Como prefere que eu entre em contato?" cf-input-placeholder="Escolha uma opção"
+      input type="radio" name="contato" id="contato-whatsapp" value="WhatsApp"
+      label for="contato-whatsapp" WhatsApp
+
+      input type="radio" name="contato" id="contato-telefone" value="Telefone"
+      label for="contato-telefone" Telefone
+
+      input type="radio" name="contato" id="contato-email" value="Email"
+      label for="contato-email" Email
+
+= javascript_include_tag 'https://code.jquery.com/jquery-3.2.1.min.js'
+= javascript_include_tag 'https://cf-4053.kxcdn.com/conversational-form/0.9.6/conversational-form.min.js'
+= javascript_include_tag 'registro.js'

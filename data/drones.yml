@@ -1,0 +1,45 @@
+- title: DJI
+  models:
+    - Mavic
+    - Phantom 3
+    - Phantom 4
+    - Phantom 4 Pro
+    - Inspire 1
+    - F450
+    - F550
+    - Inspire 1 Pro
+    - Inspire 2
+    - Phantom 1
+    - Phantom 2
+    - S1000
+    - S1000+
+    - S800
+    - S900
+- title: Parrot
+  models:
+    - Bebop
+- title: Align
+  models:
+    - M470
+    - M480
+    - M690
+- title: Freefly
+  models:
+    - ALTA 6
+    - ALTA 8
+    - Cinestar 6
+    - Cinestar 8
+- title: Tarot
+  models:
+    - 650 Sport
+    - Iron Man 1000
+    - Iron Man FY680
+    - Iron Man FY680 Pro
+    - Iron Man FY690
+    - Iron Man FY810
+    - T15
+    - T18
+    - T810 Sport
+    - T960
+    - X6
+    - X8

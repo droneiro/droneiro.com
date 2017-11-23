@@ -12,3 +12,7 @@ end
 def current_year
   Time.now.year
 end
+
+def whatsapp message
+  "https://api.whatsapp.com/send?phone=55#{data.global.phone}&text=#{message}"
+end

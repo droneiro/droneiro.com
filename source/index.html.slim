@@ -11,7 +11,7 @@
     .title.title--primary Voe tranquilamente<br> com seu drone
     .hero__divisor
     .title.title--tertiary Cuidamos de toda a burocracia necessária pra que você possa curtir seu drone com segurança e responsabilidade.
-    = link_to 'QUERO REGISTRAR MEU DRONE', '/registro', class: 'btn'
+    = link_to 'QUERO REGISTRAR MEU DRONE', '/cadastro', class: 'btn'
   = image_tag 'hero-bg.png', class: 'hero__background'
 
 .section.section--white
@@ -24,12 +24,24 @@
     .section__spacer
     .title.title--tertiary Nós te ajudamos a entender que registros você deve fazer com base na sua aeronave e no seu perfil de uso além de te ajudar a concluir cada etapa dessa jornada.
 
+.section.section--grey
+  .container.container--small.text-align-center
+    .title.title--primary.title--primary-small Sem trambiques
+    .section__spacer
+    .title.title--tertiary Nosso hobby não precisa de mais gente querendo ganhar vantagem pela falta de conhecimento. O Droneiro.com foi desenvolvido pela comunidade e para comunidade.
+    .section__spacer
+    .title.title--tertiary Por isso nossa proposta é fornecer ferramentas inclusive para os que querem fazer todas as etapas do registro sozinhos.
+
 .section.section--purple
-  .container
+  .container.text-align-center
     .drone.drone--big
       - 4.times
         span
       = image_tag 'drone-miniature.svg'
+    .section__spacer--small
+    .title.title--primary.title--primary-small Como funciona
+    .section__spacer--small
+    .title.title--secondary Entenda o passo-a-passo do nosso serviço
     .section__spacer--big
   .container.container--small
     - data.steps.each.with_index(1) do |item, index|
@@ -46,7 +58,9 @@
     .section__spacer--small
     .section__spacer
   .container.container--small.text-align-center
-    .btn.btn--secondary Fale com a gente agora mesmo!
+    = link_to whatsapp('Olá, tenho uma dúvida sobre o serviço de registro do droneiro.com!'), class: 'btn btn--secondary', target: '_blank' do
+      .fa.fa-lg.fa-whatsapp
+      | Fale com a gente!
     / - data.questions.each.with_index(1) do |item, index|
       .question
         input.question__input id="tab-#{index}" type="radio" name="tabs"
@@ -63,5 +77,7 @@
     .section__spacer--small
     .title.title--primary Pronto pra voar?
     .section__spacer
-    = link_to 'QUERO REGISTRAR MEU DRONE', '/registro', class: 'btn'
+    = link_to 'QUERO REGISTRAR MEU DRONE', '/cadastro', class: 'btn'
   = image_tag 'hero-bg.png', class: 'hero__background'
+
+= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', media: 'all'

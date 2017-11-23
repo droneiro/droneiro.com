@@ -16,36 +16,57 @@ title: Droneiro — Cadastro
     / Email
     input type="email" name="email" id="email" cf-questions="Gostei do nome, {nome}!&&Agora seu email...||{nome}?! Que nome peculiar...&&Qual o seu email?||'{nome}'. Que nome bonito!&&E seu email?" cf-input-placeholder="Digite o seu email"
 
+    / Selo da Anatel
     fieldset cf-questions="O seu drone e rádio já possuem o selo da Anatel?" cf-input-placeholder="Escolha uma opção"
-      input type="radio" name="selo-anatel" id="intro-yes" value="yes"
+      input type="radio" name="selo-anatel" id="intro-yes" value="sim"
       label for="intro-yes" Sim
 
-      input type="radio" name="selo-anatel" id="intro-no" value="no"
+      input type="radio" name="selo-anatel" id="intro-no" value="não"
       label for="intro-no" Não
 
     / Peso da aeronave
     fieldset cf-questions="Ok&&Sua aeronave pesa mais que 250gr?" cf-input-placeholder="Escolha uma opção"
-      input type="radio" name="peso" id="peso-yes" value="yes"
+      input type="radio" name="peso" id="peso-yes" value="sim"
       label for="peso-yes" Sim
 
-      input type="radio" name="peso" id="peso-no" value="no"
+      input type="radio" name="peso" id="peso-no" value="não"
       label for="peso-no" Não
 
+    / TODO
+    / Caso o drone não pese mais que 250gr precisamos falar que ele está isento de vários registros
+    / TODO
+
     / SISANT
-    fieldset cf-questions="Você já possui um cadastro no SISANT da ANAC?" cf-input-placeholder="Escolha uma opção" cf-conditional-peso="yes"
-      input type="radio" name="anac" id="anac-yes" value="yes"
+    fieldset cf-questions="Você já possui um cadastro no SISANT da ANAC?" cf-input-placeholder="Escolha uma opção" cf-conditional-peso="sim"
+      input type="radio" name="anac" id="anac-yes" value="sim"
       label for="anac-yes" Sim
 
-      input type="radio" name="anac" id="anac-no" value="no"
+      input type="radio" name="anac" id="anac-no" value="não"
       label for="anac-no" Não
 
     / Aeronavegabilidade
-    fieldset cf-questions="Sem problemas! Estou aqui pra resolver isso!&&Você vai voar com a aeronave fora do alcançe visual ou acima de 120 metros do nível do solo?&&Se você está começando agora, eu recomendo que não." cf-input-placeholder="Escolha uma opção" cf-conditional-anac="no"
-      input type="radio" name="aeronavegabilidade" id="aeronavegabilidade-yes" value="yes"
+    fieldset cf-questions="Sem problemas! Estou aqui pra resolver isso!&&Você vai voar com a aeronave fora do alcançe visual ou acima de 120 metros do nível do solo?&&Se você está começando agora, eu recomendo que não." cf-input-placeholder="Escolha uma opção" cf-conditional-anac="não"
+      input type="radio" name="aeronavegabilidade" id="aeronavegabilidade-yes" value="sim"
       label for="aeronavegabilidade-yes" Sim
 
-      input type="radio" name="aeronavegabilidade" id="aeronavegabilidade-no" value="no"
+      input type="radio" name="aeronavegabilidade" id="aeronavegabilidade-no" value="não"
       label for="aeronavegabilidade-no" Não
+
+    / Atividade Recreativa / Profissional
+    fieldset cf-questions="Você pretende utilizar seu drone para qual tipo de atividade?||Que tipo de uso você fará do drone?" cf-input-placeholder="Escolha uma opção"
+      input type="radio" name="atividade" id="intro-yes" value="recreativo"
+      label for="intro-yes" Recreativo
+
+      input type="radio" name="atividade" id="intro-no" value="profissional"
+      label for="intro-no" Profissional
+
+    / DECEA
+    fieldset cf-questions="E no DECEA/SARPAS? Você já fez o cadastro?" cf-input-placeholder="Escolha uma opção" cf-conditional-peso="sim" cf-conditional-atividade="profissional"
+      input type="radio" name="anac" id="anac-yes" value="sim"
+      label for="anac-yes" Sim
+
+      input type="radio" name="anac" id="anac-no" value="não"
+      label for="anac-no" Não
 
     / CPF
     input type="text" name="cpf" id="cpf" cf-questions="Então vamos lá!&&Se você quiser mudar alguma resposta é só clicar em cima dela.&&Qual é o seu CPF?" cf-input-placeholder="Informe o seu CPF"
@@ -58,14 +79,6 @@ title: Droneiro — Cadastro
 
     / Telefone
     input type="text" name="telefone" id="telefone" cf-questions="Agora o seu telefone.&&Não se esqueça do código de área, ok?" cf-input-placeholder="Digite o seu telefone"
-
-    / Atividade Recreativa / Profissional
-    fieldset cf-questions="Você pretende utilizar seu drone para qual tipo de atividade?||Que tipo de uso você fará do drone?" cf-input-placeholder="Escolha uma opção"
-      input type="radio" name="atividade" id="intro-yes" value="yes"
-      label for="intro-yes" Recreativo
-
-      input type="radio" name="atividade" id="intro-no" value="no"
-      label for="intro-no" Profissional
 
     / Marca
     fieldset cf-questions="Qual a marca do seu drone?||Qual é o fabricante do seu drone?" cf-input-placeholder="Escolha o fabricante"

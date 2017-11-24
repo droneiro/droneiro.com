@@ -15,20 +15,20 @@ title: Droneiro — Cadastro
     input type="email" name="email" id="email" pattern="\S+@\S+\.\S+" cf-error="Isso não parece ser um email válido..." cf-questions="Gostei do nome, {nome}!&&Agora seu email...||{nome}?! Que nome peculiar...&&Qual o seu email?||{nome}! Que nome bonito!&&E seu email?" cf-input-placeholder="Digite o seu email"
 
     / Selo da Anatel
-    fieldset cf-questions="Se você quiser mudar alguma resposta é só clicar em cima dela, ok?&&O seu drone e rádio já possuem o selo da Anatel?" cf-input-placeholder="Escolha uma opção"
+    fieldset cf-questions="O seu drone e rádio já possuem o selo da Anatel?&&Procure um símbolo parecido com esse: <br><br><img src='https://zettasolucoes.com.br/wp-content/uploads/2017/08/34231-1_260517174825.jpg'>" cf-input-placeholder="Escolha uma opção"
       input type="radio" name="selo-anatel" id="intro-yes" value="sim"
-      label for="intro-yes" Sim
+      label for="intro-yes" Possuem
 
       input type="radio" name="selo-anatel" id="intro-no" value="não"
-      label for="intro-no" Não
+      label for="intro-no" Não Possuem
 
     / Peso da aeronave
-    fieldset cf-questions="Ok&&Sua aeronave pesa mais que 250gr?" cf-input-placeholder="Escolha uma opção"
+    fieldset cf-questions="Ok. Ah, se você quiser mudar alguma resposta, é só clicar em cima dela, ok?&&Qual o peso do seu drone?" cf-input-placeholder="Escolha uma opção"
       input type="radio" name="peso" id="peso-yes" value="sim"
-      label for="peso-yes" Sim
+      label for="peso-yes" Mais de 250gr
 
       input type="radio" name="peso" id="peso-no" value="não"
-      label for="peso-no" Não
+      label for="peso-no" Menos de 250gr
 
     / SISANT
     fieldset cf-questions="Você já possui um cadastro no SISANT da ANAC?" cf-input-placeholder="Escolha uma opção" cf-conditional-peso="sim"
@@ -62,59 +62,55 @@ title: Droneiro — Cadastro
       input type="radio" name="decea" id="decea-no" value="não"
       label for="decea-no" Não
 
-    / TODO
-    / Caso o drone não pese mais que 250gr precisamos falar que ele está isento de vários registros
-    / TODO
-
-    / TODO
-    / Resultado de quais registros precisaram ser feitos
-    / TODO
-
     / Diagnóstico
-    fieldset.js-diagnóstico cf-questions="" cf-input-placeholder="Escolha uma opção" cf-conditional-peso="sim" cf-conditional-atividade="profissional"
+    fieldset.js-diagnóstico cf-input-placeholder="Escolha uma opção" cf-conditional-peso="sim" cf-conditional-atividade="profissional"
       input type="radio" name="ajuda" id="ajuda-yes" value="sim"
       label for="ajuda-yes" Quero ajuda da droneiro.com
 
       input type="radio" name="ajuda" id="ajuda-no" value="não"
       label for="ajuda-no" Prefiro fazer tudo sozinho
 
+    fieldset.js-instrucoes cf-input-placeholder="Escolha uma opção" cf-conditional-peso="sim" cf-conditional-ajuda="não"
+      input type="radio" name="instrucoes" id="instrucoes-yes" value="sim"
+      label for="instrucoes-yes" Ok, Obrigado!
+
     / CPF
-    input type="text" name="cpf" id="cpf" pattern="([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})" cf-error="hmmm, isso não é um CPF válido, é?||Tem certeza que isso é um CPF?" cf-questions="Então vamos lá!&&Qual é o seu CPF?&&Vamos usá-lo para consultar seu nome completo e data de nascimento." cf-input-placeholder="Informe o seu CPF"
+    input type="text" name="cpf" id="cpf" pattern="([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})" cf-error="hmmm, isso não é um CPF válido, é?||Tem certeza que isso é um CPF?" cf-questions="Então vamos lá!&&Qual é o seu CPF?&&Vamos usá-lo para consultar seu nome completo e data de nascimento." cf-input-placeholder="Informe o seu CPF" cf-conditional-ajuda="sim"
 
     / CEP
-    input type="text" name="cep" id="cep" pattern="^[0-9]{8}$|[0-9]{5}-[0-9]{3}|[0-9]{2}.[0-9]{3}-[0-9]{3}" cf-error="Opa, confira se você escreveu um CEP válido...||Esse não é um CEP válido..." cf-questions="Qual é o seu CEP?&&Não sabe?<br><br><a href='http://www.buscacep.correios.com.br/sistemas/buscacep/' target='_blank'>Busca de CEP dos Correios →</a>" cf-input-placeholder="Informe o seu CEP"
+    input type="text" name="cep" id="cep" pattern="^[0-9]{8}$|[0-9]{5}-[0-9]{3}|[0-9]{2}.[0-9]{3}-[0-9]{3}" cf-error="Opa, confira se você escreveu um CEP válido...||Esse não é um CEP válido..." cf-questions="Qual é o seu CEP?&&Não sabe?<br><br><a href='http://www.buscacep.correios.com.br/sistemas/buscacep/' target='_blank'>Busca de CEP dos Correios →</a>" cf-input-placeholder="Informe o seu CEP" cf-conditional-ajuda="sim"
 
     / Endereço
-    input type="text" name="endereco" id="endereco" pattern=".{10,140}" cf-error="Seu endereço está muito pequeno, não?" cf-questions="Qual é o seu endereço completo?&&Estado, cidade, bairro... Tudo!" cf-input-placeholder="Diga seu endereço completo"
+    input type="text" name="endereco" id="endereco" pattern=".{10,140}" cf-error="Seu endereço está muito pequeno, não?" cf-questions="Qual é o seu endereço completo?&&Estado, cidade, bairro... Tudo!" cf-input-placeholder="Diga seu endereço completo" cf-conditional-ajuda="sim"
 
     / Telefone
-    input type="text" name="telefone" id="telefone" pattern="^[Z0-9]{10,11}$" cf-error="Use apenas números." cf-questions="Agora o seu telefone.&&Não se esqueça do código de área, ok?" cf-input-placeholder="Digite o seu telefone"
+    input type="text" name="telefone" id="telefone" pattern="^[Z0-9]{10,11}$" cf-error="Use apenas números." cf-questions="Agora o seu telefone.&&Não se esqueça do código de área, ok?" cf-input-placeholder="Digite o seu telefone" cf-conditional-ajuda="sim"
 
     / Marca
     fieldset cf-questions="Qual a marca do seu drone?||Qual é o fabricante do seu drone?" cf-input-placeholder="Escolha o fabricante"
       - data.drones.each do |brand|
-        input type="radio" name="marca" id=brand.title.parameterize value=brand.title.parameterize
+        input type="radio" name="marca" id=brand.title.parameterize value=brand.title.parameterize cf-conditional-ajuda="sim"
         label for=brand.title.parameterize = brand.title
 
     / Modelo
     - data.drones.each do |brand|
       fieldset cf-questions="E o modelo?||Qual o modelo?||O modelo?" cf-input-placeholder="Escolha o modelo"
         - brand.models.each do |model|
-          input type="radio" name=brand.title id=model.parameterize value=model cf-conditional-marca=brand.title.parameterize
+          input type="radio" name=brand.title id=model.parameterize value=model cf-conditional-marca=brand.title.parameterize cf-conditional-ajuda="sim"
           label for=model.parameterize = model
 
     / Número de série
-    input type="text" name="numero_de_serie" id="numero_de_serie" pattern=".{3,22}" cf-error="Isso não se parece com um número de série de drone..." cf-questions="Qual é número de série do drone?&&Geralmente o número de série fica ao lado de um QR code após as iniciais SN (de serial number)" cf-input-placeholder="Digite o número de série"
+    input type="text" name="numero_de_serie" id="numero_de_serie" pattern=".{3,22}" cf-error="Isso não se parece com um número de série de drone..." cf-questions="Qual é número de série do drone?&&Geralmente o número de série fica ao lado de um QR code após as iniciais SN (de serial number)" cf-input-placeholder="Digite o número de série" cf-conditional-ajuda="sim"
 
     / Forma preferida de contato
     fieldset cf-questions="Caso eu precise confirmar algum detalhe sobre seu registro...&&Como prefere que eu entre em contato?" cf-input-placeholder="Escolha uma opção"
-      input type="radio" name="contato" id="contato-whatsapp" value="WhatsApp"
+      input type="radio" name="contato" id="contato-whatsapp" value="WhatsApp" cf-conditional-ajuda="sim"
       label for="contato-whatsapp" WhatsApp
 
-      input type="radio" name="contato" id="contato-telefone" value="Telefone"
+      input type="radio" name="contato" id="contato-telefone" value="Telefone" cf-conditional-ajuda="sim"
       label for="contato-telefone" Telefone
 
-      input type="radio" name="contato" id="contato-email" value="Email"
+      input type="radio" name="contato" id="contato-email" value="Email" cf-conditional-ajuda="sim"
       label for="contato-email" Email
 
 .form-success.align-self-center.text-align-center

@@ -23,11 +23,18 @@ body .conversational-form
     text
       font-weight: 100
       min-height: 42px
-      font-size: 1.6em
+      font-size: 1.2em
+
+      +bp(md)
+        font-size: 1.6em
 
     thumb
-      height: 6em
-      width: 6em
+      height: 3em
+      width: 3em
+
+      +bp(md)
+        height: 6em
+        width: 6em
 
       > p
         background-color: $color-chatbot
@@ -36,7 +43,10 @@ body .conversational-form
       margin-bottom: 10px
 
   cf-chat-response.robot
-    padding-left: 8em
+    padding-left: 4em
+
+    +bp(md)
+      padding-left: 8em
 
     text > p
       background: $color-chatbot
@@ -54,7 +64,10 @@ body .conversational-form
       display: block
 
   cf-chat-response.user
-    padding-right: 8em
+    padding-right: 4em
+
+    +bp(md)
+      padding-right: 8em
 
     text
       color: white

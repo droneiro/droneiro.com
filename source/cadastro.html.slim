@@ -8,13 +8,11 @@ title: Droneiro — Cadastro
 
 .visibility-hidden
   form.external-form.js-register-form
-    input type="hidden" name="primeiro-nome"
-
     / Nome
-    input type="text" name="nome" id="nome" cf-questions="Perfeito! Você tomou a decisão certa!&&Estou aqui pra descobrir quais registros você precisa de acordo com o uso que pretende fazer do seu drone.&&Que tal começar me falando seu nome?" cf-input-placeholder="Digite o seu nome"
+    input type="text" name="nome" id="nome" pattern=".{3,30}" cf-error="Preciso do seu nome..." cf-questions="Ótimo! Você está no lugar certo!&&Vou te fazer algumas perguntas para descobrir quais registros você precisa de acordo com o uso que pretende fazer do seu drone.&&Vamos começar pelo seu nome!||Perfeito! Você tomou a decisão certa!&&Estou aqui para descobrir quais registros você precisa de acordo com o uso que pretende fazer do seu drone.&&Que tal começar me falando seu nome?" cf-input-placeholder="Digite o seu nome"
 
     / Email
-    input type="email" name="email" id="email" cf-questions="Gostei do nome, {nome}!&&Agora seu email...||{nome}?! Que nome peculiar...&&Qual o seu email?||{nome}! Que nome bonito!&&E seu email?" cf-input-placeholder="Digite o seu email"
+    input type="email" name="email" id="email" pattern="\S+@\S+\.\S+" cf-error="Isso não parece ser um email válido..." cf-questions="Gostei do nome, {nome}!&&Agora seu email...||{nome}?! Que nome peculiar...&&Qual o seu email?||{nome}! Que nome bonito!&&E seu email?" cf-input-placeholder="Digite o seu email"
 
     / Selo da Anatel
     fieldset cf-questions="O seu drone e rádio já possuem o selo da Anatel?" cf-input-placeholder="Escolha uma opção"
@@ -25,16 +23,12 @@ title: Droneiro — Cadastro
       label for="intro-no" Não
 
     / Peso da aeronave
-    fieldset cf-questions="Ok&&Sua aeronave pesa mais que 250gr?" cf-input-placeholder="Escolha uma opção"
+    fieldset cf-questions="Ok, {nome}&&Sua aeronave pesa mais que 250gr?" cf-input-placeholder="Escolha uma opção"
       input type="radio" name="peso" id="peso-yes" value="sim"
       label for="peso-yes" Sim
 
       input type="radio" name="peso" id="peso-no" value="não"
       label for="peso-no" Não
-
-    / TODO
-    / Caso o drone não pese mais que 250gr precisamos falar que ele está isento de vários registros
-    / TODO
 
     / SISANT
     fieldset cf-questions="Você já possui um cadastro no SISANT da ANAC?" cf-input-placeholder="Escolha uma opção" cf-conditional-peso="sim"
@@ -69,20 +63,32 @@ title: Droneiro — Cadastro
       label for="decea-no" Não
 
     / TODO
+    / Caso o drone não pese mais que 250gr precisamos falar que ele está isento de vários registros
+    / TODO
+
+    / TODO
     / Resultado de quais registros precisaram ser feitos
     / TODO
 
+    / Diagnóstico
+    fieldset.js-diagnóstico cf-questions="" cf-input-placeholder="Escolha uma opção" cf-conditional-peso="sim" cf-conditional-atividade="profissional"
+      input type="radio" name="ajuda" id="ajuda-yes" value="sim"
+      label for="ajuda-yes" Sim
+
+      input type="radio" name="ajuda" id="ajuda-no" value="não"
+      label for="ajuda-no" Não
+
     / CPF
-    input type="text" name="cpf" id="cpf" cf-questions="Então vamos lá!&&Se você quiser mudar alguma resposta é só clicar em cima dela.&&Qual é o seu CPF?" cf-input-placeholder="Informe o seu CPF"
+    input type="text" name="cpf" id="cpf" pattern="([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})" cf-error="hmmm, isso não é um CPF válido, é?||Tem certeza que isso é um CPF?" cf-questions="Então vamos lá!&&Se você quiser mudar alguma resposta é só clicar em cima dela.&&Qual é o seu CPF?" cf-input-placeholder="Informe o seu CPF"
 
     / CEP
-    input type="text" name="cep" id="cep" cf-questions="Qual é o seu CEP?&&<a href='http://www.buscacep.correios.com.br/sistemas/buscacep/' target='_blank'>Busca de CEP dos Correios →</a>" cf-input-placeholder="Informe o seu CEP"
+    input type="text" name="cep" id="cep" pattern="^[0-9]{8}$|[0-9]{5}-[0-9]{3}|[0-9]{2}.[0-9]{3}-[0-9]{3}" cf-error="Opa, confira se você escreveu um CEP válido...||Esse não é um CEP válido..." cf-questions="Qual é o seu CEP?&&Não sabe?<br><br><a href='http://www.buscacep.correios.com.br/sistemas/buscacep/' target='_blank'>Busca de CEP dos Correios →</a>" cf-input-placeholder="Informe o seu CEP"
 
     / Endereço
-    input type="text" name="endereco" id="endereco" cf-questions="Qual é o seu endereço completo?&&Estado, cidade, bairro... Tudo!" cf-input-placeholder="Diga seu endereço completo"
+    input type="text" name="endereco" id="endereco" pattern=".{10,140}" cf-error="Seu endereço está muito pequeno, não?" cf-questions="Qual é o seu endereço completo?&&Estado, cidade, bairro... Tudo!" cf-input-placeholder="Diga seu endereço completo"
 
     / Telefone
-    input type="text" name="telefone" id="telefone" cf-questions="Agora o seu telefone.&&Não se esqueça do código de área, ok?" cf-input-placeholder="Digite o seu telefone"
+    input type="text" name="telefone" id="telefone" pattern="^[Z0-9]{10,11}$" cf-error="Use apenas números." cf-questions="Agora o seu telefone.&&Não se esqueça do código de área, ok?" cf-input-placeholder="Digite o seu telefone"
 
     / Marca
     fieldset cf-questions="Qual a marca do seu drone?||Qual é o fabricante do seu drone?" cf-input-placeholder="Escolha o fabricante"
@@ -98,11 +104,7 @@ title: Droneiro — Cadastro
           label for=model.parameterize = model
 
     / Número de série
-    input type="text" name="numero_de_serie" id="numero_de_serie" cf-questions="Qual é número de série do drone?&&Geralmente o número de série fica ao lado de um QR code após as iniciais SN (de serial number)" cf-input-placeholder="Digite o número de série"
-
-    / TODO
-    / Detalhe do que tem que ser feito e opção do usuário fazer sozinho.
-    / TODO
+    input type="text" name="numero_de_serie" id="numero_de_serie" pattern=".{3,22}" cf-error="Isso não se parece com um número de série de drone..." cf-questions="Qual é número de série do drone?&&Geralmente o número de série fica ao lado de um QR code após as iniciais SN (de serial number)" cf-input-placeholder="Digite o número de série"
 
     / Forma preferida de contato
     fieldset cf-questions="Caso eu precise confirmar algum detalhe sobre seu registro...&&Como prefere que eu entre em contato?" cf-input-placeholder="Escolha uma opção"
@@ -115,12 +117,13 @@ title: Droneiro — Cadastro
       input type="radio" name="contato" id="contato-email" value="Email"
       label for="contato-email" Email
 
-/ .form-success.align-self-center.text-align-center
+.form-success.align-self-center.text-align-center
   .title.title--primary.align-self-center 🚀
   .section__spacer--small
   .title.title--primary.title--primary-small Pronto!
   .hero__divisor
-  .title.title--tertiary Você vai receber um email em algumas horas com o link para pagamento via PagSeguro.
+  .title.title--tertiary Você vai receber um email em algumas horas com o link para pagamento via PagSeguro e mais algumas informações importantes.
+  = link_to 'RETORNAR PARA O INÍCIO', '/', class: 'btn align-self-center'
 
 = javascript_include_tag 'https://code.jquery.com/jquery-3.2.1.min.js'
 = javascript_include_tag 'https://cf-4053.kxcdn.com/conversational-form/0.9.6/conversational-form.min.js'

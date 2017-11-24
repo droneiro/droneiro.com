@@ -3,17 +3,21 @@
 
 .step
   display: flex
+  margin: 0 2em
 
   & + &
-    margin-top: 5em
-
-  > div
-    max-width: 50%
+    margin-top: 2em
 
   +bp(md)
+    & + &
+      margin-top: 5em
+
     &:nth-child(even)
       flex-direction: row-reverse
       text-align: right
+
+    > div
+      max-width: 50%
 
 .step__icon
   width: 4em
@@ -27,6 +31,10 @@
   box-shadow: 0 10px 20px rgba(black, .19)
   margin: 0 2em
   flex-shrink: 0
+
+  +bp(md-only)
+    margin-left: 0
+    font-size: .7em
 
   span
     font-size: 2em

@@ -15,7 +15,7 @@ title: Droneiro — Cadastro
     input type="email" name="email" id="email" pattern="\S+@\S+\.\S+" cf-error="Isso não parece ser um email válido..." cf-questions="Gostei do nome, {nome}!&&Agora seu email...||{nome}?! Que nome peculiar...&&Qual o seu email?||{nome}! Que nome bonito!&&E seu email?" cf-input-placeholder="Digite o seu email"
 
     / Selo da Anatel
-    fieldset cf-questions="O seu drone e rádio já possuem o selo da Anatel?" cf-input-placeholder="Escolha uma opção"
+    fieldset cf-questions="Se você quiser mudar alguma resposta é só clicar em cima dela, ok?&&O seu drone e rádio já possuem o selo da Anatel?" cf-input-placeholder="Escolha uma opção"
       input type="radio" name="selo-anatel" id="intro-yes" value="sim"
       label for="intro-yes" Sim
 
@@ -23,7 +23,7 @@ title: Droneiro — Cadastro
       label for="intro-no" Não
 
     / Peso da aeronave
-    fieldset cf-questions="Ok, {nome}&&Sua aeronave pesa mais que 250gr?" cf-input-placeholder="Escolha uma opção"
+    fieldset cf-questions="Ok&&Sua aeronave pesa mais que 250gr?" cf-input-placeholder="Escolha uma opção"
       input type="radio" name="peso" id="peso-yes" value="sim"
       label for="peso-yes" Sim
 
@@ -39,7 +39,7 @@ title: Droneiro — Cadastro
       label for="anac-no" Não
 
     / Aeronavegabilidade
-    fieldset cf-questions="Sem problemas! Estou aqui pra resolver isso!&&Você vai voar com a aeronave fora do alcançe visual ou acima de 120 metros do nível do solo?&&Se você está começando agora, eu recomendo que não." cf-input-placeholder="Escolha uma opção" cf-conditional-anac="não"
+    fieldset cf-questions="Sem problemas, {nome}! Estou aqui pra resolver isso!&&Você vai voar com a aeronave fora do alcançe visual ou acima de 120 metros do nível do solo?&&Se você está começando agora, eu recomendo que não." cf-input-placeholder="Escolha uma opção" cf-conditional-anac="não"
       input type="radio" name="aeronavegabilidade" id="aeronavegabilidade-yes" value="sim"
       label for="aeronavegabilidade-yes" Sim
 
@@ -73,13 +73,13 @@ title: Droneiro — Cadastro
     / Diagnóstico
     fieldset.js-diagnóstico cf-questions="" cf-input-placeholder="Escolha uma opção" cf-conditional-peso="sim" cf-conditional-atividade="profissional"
       input type="radio" name="ajuda" id="ajuda-yes" value="sim"
-      label for="ajuda-yes" Sim
+      label for="ajuda-yes" Quero ajuda da droneiro.com
 
       input type="radio" name="ajuda" id="ajuda-no" value="não"
-      label for="ajuda-no" Não
+      label for="ajuda-no" Prefiro fazer tudo sozinho
 
     / CPF
-    input type="text" name="cpf" id="cpf" pattern="([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})" cf-error="hmmm, isso não é um CPF válido, é?||Tem certeza que isso é um CPF?" cf-questions="Então vamos lá!&&Se você quiser mudar alguma resposta é só clicar em cima dela.&&Qual é o seu CPF?" cf-input-placeholder="Informe o seu CPF"
+    input type="text" name="cpf" id="cpf" pattern="([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})" cf-error="hmmm, isso não é um CPF válido, é?||Tem certeza que isso é um CPF?" cf-questions="Então vamos lá!&&Qual é o seu CPF?&&Vamos usá-lo para consultar seu nome completo e data de nascimento." cf-input-placeholder="Informe o seu CPF"
 
     / CEP
     input type="text" name="cep" id="cep" pattern="^[0-9]{8}$|[0-9]{5}-[0-9]{3}|[0-9]{2}.[0-9]{3}-[0-9]{3}" cf-error="Opa, confira se você escreveu um CEP válido...||Esse não é um CEP válido..." cf-questions="Qual é o seu CEP?&&Não sabe?<br><br><a href='http://www.buscacep.correios.com.br/sistemas/buscacep/' target='_blank'>Busca de CEP dos Correios →</a>" cf-input-placeholder="Informe o seu CEP"

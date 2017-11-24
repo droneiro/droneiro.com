@@ -22,7 +22,11 @@ function submitForm(e){
 
 var dispatcher = new cf.EventDispatcher();
 dispatcher.addEventListener(cf.FlowEvents.USER_INPUT_UPDATE, function(event){
-  console.log(event);
+  var serialized = $('.js-register-form').serializeArray().reduce(function(obj, item) {
+    obj[item.name] = item.value;
+    return obj;
+  }, {});
+  console.log(serialized);
 }, false);
 
 $(".js-register-form").conversationalForm({
@@ -40,8 +44,6 @@ $(".js-register-form").conversationalForm({
   hideUserInputOnNoneTextInput: true,
   eventDispatcher: dispatcher
 });
-
-//
 
 function set_username(username){
   username.replace(/\ /g, '+');

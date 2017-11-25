@@ -39,11 +39,11 @@ title: Droneiro — Cadastro
       label for="anac-no" Não
 
     / Aeronavegabilidade
-    fieldset cf-questions="Sem problemas, {nome}! Estou aqui pra resolver isso!&&Você vai voar com a aeronave fora do alcançe visual ou acima de 120 metros do nível do solo?&&Se você está começando agora, eu recomendo que não." cf-input-placeholder="Escolha uma opção" cf-conditional-anac="não"
-      input type="radio" name="aeronavegabilidade" id="aeronavegabilidade-yes" value="sim"
+    fieldset cf-questions="Sem problemas, {nome}! Estou aqui pra resolver isso!&&Você vai voar com a aeronave fora do alcançe visual ou acima de 120 metros do nível do solo?&&Se você está começando agora, eu recomendo que não." cf-input-placeholder="Escolha uma opção"
+      input type="radio" name="aeronavegabilidade" id="aeronavegabilidade-yes" value="sim" cf-conditional-anac="não"
       label for="aeronavegabilidade-yes" Sim
 
-      input type="radio" name="aeronavegabilidade" id="aeronavegabilidade-no" value="não"
+      input type="radio" name="aeronavegabilidade" id="aeronavegabilidade-no" value="não" cf-conditional-anac="não"
       label for="aeronavegabilidade-no" Não
 
     / Atividade Recreativa / Profissional
@@ -55,11 +55,11 @@ title: Droneiro — Cadastro
       label for="intro-no" Profissional
 
     / DECEA
-    fieldset cf-questions="E no DECEA/SARPAS? Você já fez o cadastro?" cf-input-placeholder="Escolha uma opção" cf-conditional-peso="sim" cf-conditional-atividade="profissional"
-      input type="radio" name="decea" id="decea-yes" value="sim"
+    fieldset cf-questions="E no DECEA/SARPAS? Você já fez o cadastro?" cf-input-placeholder="Escolha uma opção"
+      input type="radio" name="decea" id="decea-yes" value="sim" cf-conditional-peso="sim" cf-conditional-atividade="profissional"
       label for="decea-yes" Sim
 
-      input type="radio" name="decea" id="decea-no" value="não"
+      input type="radio" name="decea" id="decea-no" value="não" cf-conditional-peso="sim" cf-conditional-atividade="profissional"
       label for="decea-no" Não
 
     / Diagnóstico

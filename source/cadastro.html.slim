@@ -15,7 +15,7 @@ title: Droneiro — Cadastro
     input type="email" name="email" id="email" pattern="\S+@\S+\.\S+" cf-error="Isso não parece ser um email válido..." cf-questions="Gostei do nome, {nome}!&&Agora seu email...||{nome}?! Que nome peculiar...&&Qual o seu email?||{nome}! Que nome bonito!&&E seu email?" cf-input-placeholder="Digite o seu email"
 
     / Selo da Anatel
-    fieldset cf-questions="O seu drone e rádio já possuem o selo da Anatel?&&Procure um símbolo parecido com esse: <br><br><img src='https://zettasolucoes.com.br/wp-content/uploads/2017/08/34231-1_260517174825.jpg'>" cf-input-placeholder="Escolha uma opção"
+    fieldset cf-questions="O seu drone e rádio já possuem o selo da Anatel?&&Procure um símbolo parecido com esse: <br><br><img src='https://zettasolucoes.com.br/wp-content/uploads/2017/08/34231-1_260517174825.jpg' width='800' height='600'>" cf-input-placeholder="Escolha uma opção"
       input type="radio" name="selo-anatel" id="intro-yes" value="sim"
       label for="intro-yes" Possuem
 
@@ -63,14 +63,14 @@ title: Droneiro — Cadastro
       label for="decea-no" Não
 
     / Diagnóstico
-    fieldset.js-diagnóstico cf-input-placeholder="Escolha uma opção" cf-conditional-peso="sim" cf-conditional-atividade="profissional"
+    fieldset.js-diagnostico cf-input-placeholder="Escolha uma opção"
       input type="radio" name="ajuda" id="ajuda-yes" value="sim"
       label for="ajuda-yes" Quero ajuda da droneiro.com
 
       input type="radio" name="ajuda" id="ajuda-no" value="não"
       label for="ajuda-no" Prefiro fazer tudo sozinho
 
-    fieldset.js-instrucoes cf-input-placeholder="Escolha uma opção" cf-conditional-peso="sim" cf-conditional-ajuda="não"
+    fieldset.js-instrucoes cf-input-placeholder="Escolha uma opção" cf-conditional-ajuda="não"
       input type="radio" name="instrucoes" id="instrucoes-yes" value="sim"
       label for="instrucoes-yes" Ok, Obrigado!
 

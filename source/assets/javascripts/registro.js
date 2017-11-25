@@ -27,7 +27,7 @@ dispatcher.addEventListener(cf.FlowEvents.USER_INPUT_UPDATE, function(event){
     return obj;
   }, {});
 
-  $('.js-diagnóstico').attr('cf-questions', getDiagnostic(data));
+  $('.js-diagnostico').attr('cf-questions', getDiagnostic(data));
 }, false);
 
 function getDiagnostic(data) {
@@ -45,7 +45,7 @@ function getDiagnostic(data) {
       valor: 70
     },
     anac: {
-      title: 'Anac',
+      title: 'Anac - SISANT',
       description: "A ANAC é o orgão que criou as regras para operações com drones. Precisamos cadastrar você e seu drone no sistema SISANT.",
       instrucoes: "<a href='https://sistemas.anac.gov.br/SISANT/Operador/Cadastrar' target='_blank'>● Cadastro de Operador no SISANT</a><a href='http://www.anac.gov.br/assuntos/paginas-tematicas/drones/cadastro-de-drones' target='_blank'>● Cadastro de Drones - Informativo da Anac</a><a href='https://www.youtube.com/watch?v=SiP-BADS4qc' target='_blank'>● Como cadastrar drone na ANAC - SISANT 2017 — Video do canal Águias Drones</a><br>",
       sigla: "Agência Nacional de Aviação Civil",
@@ -53,7 +53,7 @@ function getDiagnostic(data) {
       valor: 25
     },
     decea: {
-      title: 'Decea',
+      title: 'Decea - SARPAS',
       description: "O DECEA disponibiliza um sistema para a solicitação de acesso ao espaço aéreo para o uso de drones. Precisamos cadastrar você e sua aeronave no SARPAS.",
       instrucoes: "<a href='https://www.youtube.com/watch?v=AykL8kfcE4c' target='_blank'>● Como fazer o cadastro de usuário - Vídeo do canal do DECEA</a><a href='http://www.decea.gov.br/drone/' target='_blank'>● Portal Drone/RPAS - Decea</a><a href='http://servicos.decea.gov.br/sarpas/?i=cadastro' target='_blank'>● Novo cadastro no SARPAS</a><br>",
       sigla: "Departamento de Controle do Espaço Aéreo",
@@ -86,19 +86,24 @@ function getDiagnostic(data) {
 
   if (userRegistros.length > 1) {
     message += "&&São "+userRegistros.length+" registros ao todo:";
-    userRegistros.forEach( function(element, index) {
-      message += "<span><br><b>"+element.title+"</b> - "+element.description+"</span>";
-      valorTotal += element.valorOrgao;
-      valorTotal += element.valor;
-    });
   } else if (userRegistros.length == 1){
     message += "&&Na verdade, só falta um registro!";
-    message += "<span><br><b>"+userRegistros[0].title+"</b><br>"+userRegistros[0].description+"</span>";
   } else {
-
+    message += "&&<b>Parabéns!</b> Você não tem nenhum registro pendente!<br><br><b>Voe tranquilo!</b>";
+    if(data['selo-anatel'] && data.peso && data.anac && data.decea){
+      $('cf-input-control-elements').css("display","none");
+    }
   }
 
-  message += "&&<span>Você tem duas opções: <br><br><b>● Deixar todo esse trabalho na nossa mão</b> por <b>R$ "+valorTotal+"</b>. Sem esquentar a cabeça com a burocracia do processo, você ainda vai receber na sua casa todos os documentos plastificados, adesivo do fabricantes e de identificação da aeronave em caso de perda por fly away. <br><br><b>● Fazer você mesmo</b> e arcar com os possíveis custos diretamente com os orgãos responsáveis.</span>";
+  userRegistros.forEach(function(el){
+    message += "<span><br><b>"+el.title+"</b> - "+el.description+"</span>";
+    valorTotal += el.valor;
+    valorTotal += el.valorOrgao;
+  });
+
+  if (userRegistros.length > 0) {
+    message += "&&<span>Você tem duas opções: <br><br><b>● Deixar todo esse trabalho na nossa mão</b> por <b>R$ "+valorTotal+"</b>. Sem esquentar a cabeça com a burocracia do processo, você ainda vai receber na sua casa todos os documentos plastificados, adesivo do fabricante e de identificação da aeronave em caso de perda por fly away. <br><br><b>● Fazer você mesmo</b> e arcar com os possíveis custos diretamente com os orgãos responsáveis.</span>";
+  }
 
   setInstrucoes(data, userRegistros);
 

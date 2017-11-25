@@ -62,7 +62,7 @@
   .container.container--small
     - data.questions.each.with_index(1) do |item, index|
       .question
-        input.question__input id="tab-#{index}" type="radio" name="tabs"
+        input.question__input id="tab-#{index}" type="checkbox" name="tabs"
         label.question__label for="tab-#{index}" = item.title
         .question__answer
           p = item.paragraph

@@ -107,6 +107,8 @@ function getDiagnostic(data) {
     message += "&&<span>Você tem duas opções: <br><br><b>● Deixar todo esse trabalho na nossa mão</b> por <b>R$ "+valorTotal+"</b>. Sem esquentar a cabeça com a burocracia do processo, você ainda vai receber na sua casa todos os documentos plastificados, adesivo do fabricante e de identificação da aeronave em caso de perda por fly away. <br><br><b>● Fazer você mesmo</b> e arcar com os possíveis custos diretamente com os orgãos responsáveis.</span>";
   }
 
+  $('.js-price').val(valorTotal);
+
   setInstrucoes(data, userRegistros);
 
   return message;

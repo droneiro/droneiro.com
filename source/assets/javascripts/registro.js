@@ -4,12 +4,14 @@ $(".js-register-form").submit(function(e){
 });
 
 function submitForm(e){
+  document.body.classList.add('is-loading');
   $.ajax({
     url: 'https://hooks.zapier.com/hooks/catch/602113/siw2ip/',
     type: 'get',
     dataType: 'json',
     data: $(e.currentTarget).serialize(),
     success: function(data) {
+      document.body.classList.remove('is-loading');
       document.body.classList.add('form-sent');
       console.log("Success!");
     },

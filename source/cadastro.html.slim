@@ -75,7 +75,10 @@ title: Droneiro — Cadastro
       label for="instrucoes-yes" Ok, Obrigado!
 
     / CPF
-    input type="text" name="cpf" id="cpf" pattern="([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})" cf-error="hmmm, isso não é um CPF válido, é?||Tem certeza que isso é um CPF?" cf-questions="Então vamos lá!&&Qual é o seu CPF?&&Vamos usá-lo para consultar seu nome completo e data de nascimento." cf-input-placeholder="Informe o seu CPF" cf-conditional-ajuda="sim"
+    input type="text" name="cpf" id="cpf" pattern="([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})" cf-error="hmmm, isso não é um CPF válido, é?||Tem certeza que isso é um CPF?" cf-questions="Então vamos lá!&&Qual é o seu CPF?&&Vamos usá-lo para consultar seu nome completo também." cf-input-placeholder="Informe o seu CPF" cf-conditional-ajuda="sim"
+
+    / Nascimento
+    input type="text" name="nascimento" id="nascimento" pattern="^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$" cf-error="Use o formato dd/mm/ano" cf-questions="Certinho...&&Qual sua data de nascimento?" cf-input-placeholder="dd/mm/ano" cf-conditional-ajuda="sim"
 
     / CEP
     input type="text" name="cep" id="cep" pattern="^[0-9]{8}$|[0-9]{5}-[0-9]{3}|[0-9]{2}.[0-9]{3}-[0-9]{3}" cf-error="Opa, confira se você escreveu um CEP válido...||Esse não é um CEP válido..." cf-questions="Qual é o seu CEP?&&Não sabe?<br><br><a href='http://www.buscacep.correios.com.br/sistemas/buscacep/' target='_blank'>Busca de CEP dos Correios →</a>" cf-input-placeholder="Informe o seu CEP" cf-conditional-ajuda="sim"

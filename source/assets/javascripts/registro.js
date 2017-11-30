@@ -14,6 +14,7 @@ function submitForm(e){
       document.body.classList.remove('is-loading');
       document.body.classList.add('form-sent');
       console.log("Success!");
+      fbq('track', 'CompleteRegistration');
     },
     error: function(data) {
       alert("Está tudo bem com a sua internet? Não estou conseguindo mandar os dados do seu formulário.");
@@ -151,4 +152,4 @@ function set_username(username){
   $('head').append('<style type="text/css">body .conversational-form cf-chat-response.user thumb{background-image: url(https://ui-avatars.com/api/?background=5B5AEC&color=ffffff&size=128&font-size=0.3&length=1&name='+username+') !important}</style>');
 }
 
-// set_username('kande');
+fbq('track', 'Lead');

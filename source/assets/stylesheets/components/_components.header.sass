@@ -8,12 +8,13 @@
   right: 0
   background-color: rgba(black, 0)
   transition: .4s
-  z-index: 9
+  z-index: 9999
   display: flex
   justify-content: space-between
 
   +bp(md-only)
-    display: none
+    position: absolute
+    justify-content: center
 
   .btn
     margin-right: 2em
@@ -25,14 +26,22 @@
       opacity: 1
       visibility: visible
 
+    +bp(md-only)
+      display: none
+
 .header__logo
   margin: 2em
-  height: 4em
+  height: 1.4em
+  line-height: 0
   transition: .4s cubic-bezier(.75,-0.5,0,1.75)
 
-  a:hover &
-    transform: rotate(-90deg)
+  img
+    height: 100%
+    width: auto
 
-  body.header-is-compact &
-    height: 2.4em
-    margin: 1.4em
+  a:hover &
+    transform: scale(1.05)
+
+  +bp(md-only)
+    body.cadastro &
+      display: none

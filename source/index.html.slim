@@ -1,9 +1,7 @@
 .header
   = link_to '/', class: 'header__logo' do
     = image_tag 'droneiro-com.svg'
-  = link_to '/cadastro', class: 'btn align-self-center' do
-    .fa.fa-lg.fa-rocket
-    | QUERO REGISTRAR MEU DRONE
+  = link_to 'QUERO REGISTRAR MEU DRONE', '/cadastro', class: 'btn align-self-center'
 
 .hero.hero--full.section--dark
   .container.text-align-center
@@ -16,9 +14,7 @@
     .title.title--primary Voe tranquilamente<br> com seu drone
     .hero__divisor
     .title.title--tertiary Cuidamos de toda a burocracia necessária pra que você possa curtir seu drone com segurança e responsabilidade.
-    = link_to '/cadastro', class: 'btn' do
-      .fa.fa-lg.fa-rocket
-      | QUERO REGISTRAR MEU DRONE
+    = link_to 'QUERO REGISTRAR MEU DRONE', '/cadastro', class: 'btn'
   = image_tag 'hero-bg.png', class: 'hero__background'
 
 .section.section--white

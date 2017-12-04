@@ -35,6 +35,7 @@ dispatcher.addEventListener(cf.FlowEvents.USER_INPUT_UPDATE, function(event){
 
 function getDiagnostic(data) {
   var message = "",
+      anatelMessage = "",
       userRegistros = [],
       valorTotal = 29;
 
@@ -75,6 +76,7 @@ function getDiagnostic(data) {
   // Anatel
   if (data['selo-anatel'] == "não") {
     userRegistros.push(registros.anatel);
+    anatelMessage = " (já com os R$ "+registros.anatel.valorOrgao+" destinados à Anatel incluídos)";
   }
 
   // Anac
@@ -105,7 +107,7 @@ function getDiagnostic(data) {
   });
 
   if (userRegistros.length > 0) {
-    message += "&&<span>Você tem duas opções: <br><br><b>● Deixar todo esse trabalho na nossa mão</b> por <b>R$ "+valorTotal+"</b>. Sem esquentar a cabeça com a burocracia do processo, você ainda vai receber na sua casa todos os documentos plastificados, adesivo do fabricante e de identificação da aeronave em caso de perda por fly away. <br><br><b>● Fazer você mesmo</b> e arcar com os possíveis custos diretamente com os orgãos responsáveis.</span>";
+    message += "&&<span>Você tem duas opções: <br><br><b>● Deixar todo esse trabalho na nossa mão</b> por <b>R$ "+valorTotal+"</b>"+anatelMessage+". Sem esquentar a cabeça com a burocracia do processo, você ainda vai receber na sua casa todos os documentos plastificados, adesivo do fabricante e de identificação da aeronave em caso de perda. O pagamento é feito pelo PagSeguro e ainda pode ser parcelado! <br><br><b>● Fazer você mesmo</b> e arcar com os possíveis custos diretamente com os orgãos responsáveis.</span>";
   }
 
   $('.js-price').val(valorTotal);

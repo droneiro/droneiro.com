@@ -54,6 +54,11 @@ title: Droneiro — Cadastro
       input type="radio" name="atividade" id="intro-no" value="profissional"
       label for="intro-no" Profissional
 
+    fieldset cf-questions="Em qual ramo profissional você atua?||Qual a sua atividade profissional?" cf-input-placeholder="Escolha uma opção"
+      - data.atividades_profissionais.each do |atividade|
+        input type="radio" name="atividade-profissional" id=atividade.parameterize value=atividade cf-conditional-atividade="profissional"
+        label for=atividade.parameterize = atividade
+
     / DECEA
     fieldset cf-questions="E no DECEA/SARPAS? Você já fez o cadastro?" cf-input-placeholder="Escolha uma opção"
       input type="radio" name="decea" id="decea-yes" value="sim" cf-conditional-peso="sim"

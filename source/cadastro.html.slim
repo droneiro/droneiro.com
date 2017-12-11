@@ -132,6 +132,34 @@ title: Droneiro — Cadastro
   .loader__inner.loader__inner--two
   .loader__inner.loader__inner--three
 
+/ Google Conversion
+javascript:
+  /* <![CDATA[ */
+  goog_snippet_vars = function() {
+    var w = window;
+    w.google_conversion_id = 825567644;
+    w.google_conversion_label = "nIA9CMm9q3oQnNPUiQM";
+    w.google_remarketing_only = false;
+  }
+  // DO NOT CHANGE THE CODE BELOW.
+  goog_report_conversion = function(url) {
+    goog_snippet_vars();
+    window.google_conversion_format = "3";
+    var opt = new Object();
+    opt.onload_callback = function() {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    }
+    var conv_handler = window['google_trackConversion'];
+    if (typeof(conv_handler) == 'function') {
+      conv_handler(opt);
+    }
+  }
+  /* ]]> */
+= javascript_include_tag '//www.googleadservices.com/pagead/conversion_async.js'
+
+
 = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'
 = javascript_include_tag 'https://cf-4053.kxcdn.com/conversational-form/0.9.6/conversational-form.min.js'
 = javascript_include_tag 'registro.js'

@@ -16,6 +16,7 @@ function submitForm(e){
       console.log("Success!");
       fbq('track', 'CompleteRegistration');
       ga('send', 'event', 'conversion', 'CompleteRegistration', 'CompleteRegistration');
+      goog_report_conversion();
     },
     error: function(data) {
       alert("Está tudo bem com a sua internet? Não estou conseguindo mandar os dados do seu formulário.");

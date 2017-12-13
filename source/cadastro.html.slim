@@ -38,14 +38,6 @@ title: Droneiro — Cadastro
       input type="radio" name="anac" id="anac-no" value="não"
       label for="anac-no" Não
 
-    / Aeronavegabilidade
-    fieldset cf-questions="Sem problemas, {nome}! Estou aqui pra resolver isso!&&Você vai voar com a aeronave fora do alcançe visual ou acima de 120 metros do nível do solo?&&Se você está começando agora, eu recomendo que não." cf-input-placeholder="Escolha uma opção"
-      input type="radio" name="aeronavegabilidade" id="aeronavegabilidade-yes" value="sim" cf-conditional-anac="não"
-      label for="aeronavegabilidade-yes" Sim
-
-      input type="radio" name="aeronavegabilidade" id="aeronavegabilidade-no" value="não" cf-conditional-anac="não"
-      label for="aeronavegabilidade-no" Não
-
     / Atividade Recreativa / Profissional
     fieldset cf-questions="Você pretende utilizar seu drone para qual tipo de atividade?||Que tipo de uso você fará do drone?" cf-input-placeholder="Escolha uma opção"
       input type="radio" name="atividade" id="intro-yes" value="recreativo"

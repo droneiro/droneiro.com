@@ -115,7 +115,7 @@ function getDiagnostic(data) {
   $('.js-price').val(valorTotal);
 
   if (data.ajuda == "sim") {
-    $('.js-form-success').text('Você vai receber um email em algumas horas com o link para pagamento via PagSeguro e mais algumas informações importantes.');
+    $('.js-form-success').text('Em breve nossa equipe entrará em contato para te explicar os próximos passos.');
   } else {
     $('.js-form-success').text('Ficamos felizes em ter te ajudado!');
   }

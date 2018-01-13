@@ -7,13 +7,21 @@
 .hero__divisor
   width: 6%
   border-top: 1px solid rgba(white, .5)
-  margin: 2em auto
+  margin: 2em 0
+  display: inline-block
+
+  &--dark
+    border-color: rgba(black, .5)
+
+  +bp(md-only)
+    margin: 1em 0
 
 .hero__background
   position: absolute
   width: 100%
   height: auto
   bottom: 0
+  right: 0
 
   +bp(sm-only)
     width: 220%

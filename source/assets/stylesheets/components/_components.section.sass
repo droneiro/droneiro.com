@@ -33,5 +33,16 @@
   background-color: $color-lightgrey
   border-top: 1px solid rgba(black, .05)
 
+.section--center-on-small
+  +bp(md-only)
+    text-align: center
+
+  +bp(md)
+    &:nth-child(odd)
+      text-align: right
+
 .section--big
   padding: 9em 0
+
+.section--small
+  padding: 1.5em 0

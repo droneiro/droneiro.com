@@ -1,92 +1,49 @@
 .header
   = link_to '/', class: 'header__logo' do
     = image_tag 'droneiro-com.svg'
-  = link_to 'QUERO REGISTRAR MEU DRONE', '/cadastro', class: 'btn align-self-center'
 
-.hero.hero--full.section--dark
+.hero.hero--full.section--purple
   .container.text-align-center
     .drone
       - 4.times
         span
       = image_tag 'drone-miniature.svg'
     .section__spacer--small
-    h3.title.title--secondary Ainda sem registro?
-    h1.title.title--primary Voe tranquilamente<br> com seu drone
+    h1.title.title--primary Você voa e nós<br> cuidamos de todo o resto
     .hero__divisor
-    h2.title.title--tertiary Cuidamos de toda a burocracia necessária pra que você possa curtir seu drone com segurança e responsabilidade.
-    = link_to 'QUERO REGISTRAR MEU DRONE', '/cadastro', class: 'btn'
+    h2.title.title--tertiary A droneiro.com foi criada para resolver os principais<br class="no-small"> problemas dos proprietários de drone no Brasil.
   = image_tag 'hero-bg.png', class: 'hero__background'
-  .hero__detail Já ajudamos <b>#{data.global.ajuda.droneiros}</b> droneiros com <b>#{data.global.ajuda.registros}</b> registros.
 
-.section.section--white
-  .container.container--small.text-align-center
-    h1.title.title--primary.title--primary-small Anatel, Anac/Sisant, Decea/Sarpas...
-    .section__spacer--small
-    .title.title--secondary Confuso com todas essas siglas?
-    .section__spacer
-    .title.title--tertiary Você não está sozinho. Muitos droneiros não sabem por onde começar a homologação da sua aeronave e por isso acabam deixando de lado esse passo importante.
-    .section__spacer
-    .title.title--tertiary Nós descobrimos que registros você deve ter com base na sua aeronave e no seu perfil de uso além de te ajudar a concluir essa jornada.
+.section.section--center-on-small
+  .container
+    h3.title.title--secondary Ainda sem registros?
+    h1.title.title--primary.title--primary-small Voe tranquilamente<br> com seu drone
+    .hero__divisor.hero__divisor--dark
+    h2.title--tertiary Cuidamos de toda a burocracia necessária pra que<br class="no-small"> você possa curtir seu drone com segurança e responsabilidade.
+    = link_to 'QUERO REGISTRAR MEU DRONE', '/registros', class: 'btn'
 
-.section.section--grey
-  .container.container--small.text-align-center
-    .title.title--primary.title--primary-small Sem trambiques
-    .section__spacer
-    .title.title--tertiary Nosso hobby não precisa de mais gente querendo ganhar vantagem pela falta de conhecimento. O Droneiro.com foi desenvolvido pela comunidade e para comunidade.
-    .section__spacer
-    .title.title--tertiary Por isso nossa proposta é fornecer ferramentas para os que querem fazer o registro sozinhos e um <b>preço justo</b> para os que não querem dor de cabeça com o processo e quiserem deixar essa missão com a gente.
+.section.section--white.section--center-on-small
+  .container
+    h1.title.title--primary.title--primary-small Ofereça e contrate<br class="no-small"> serviços de imagens aéreas
+    .hero__divisor.hero__divisor--dark
+    h2.title--tertiary Os melhores pilotos e oportunidades de jobs estão aqui.<br class="no-small"> Mostre o seu trabalho e se torne um profissional.
+    = link_to 'CONHEÇA NOSSA PLATAFORMA', data.global.plataforma, class: 'btn', target: '_blank'
 
-.section.section--purple
+.section
   .container.text-align-center
-    .drone.drone--big
-      - 4.times
-        span
-      = image_tag 'drone-miniature.svg'
-    .section__spacer--small
-    .title.title--primary.title--primary-small Como funciona
-    .section__spacer--small
-    .title.title--secondary Entenda passo-a-passo nosso serviço
-    .section__spacer--big
-  .container.container--small
-    - data.steps.each.with_index(1) do |item, index|
-      .step
-        .step__icon.align-self-center
-          span.align-self-center = index
-        .align-self-center
-          .step__title = item.title
-          .step__paragraph = item.paragraph
+    h1.title.title--primary.title--primary-small Nosso Blog
+    .section__spacer.section__spacer--small
+    h3.title.title--secondary Dicas de pilotagem e imagens aéreas com drones
+    .section__spacer.section__spacer--big
+    .article__container
+      - data.medium.payload.references.Post.each do |post|
+        = link_to "https://medium.com/officeless/#{post[1].uniqueSlug}", class: 'article bg-center-cover', target: '_new', style: "background-image: url(https://cdn-images-1.medium.com/max/1400/#{(post[1].virtuals.previewImage.imageId.empty? ? '1*SpUNoYmMyNTynhkKcY4a7Q@2x.jpeg' : post[1].virtuals.previewImage.imageId)})" do
+          .article__info
+            .article__title.title.title--secondary = post[1].title
+            .article__author Por #{data.medium.payload.references.User[post[1].creatorId].name}
 
-.section.section--white
-  .container.container--small.text-align-center
-    .title.title--primary.title--primary-small Dúvidas?
-    .section__spacer--big
-  .container.container--small
-    - data.questions.each.with_index(1) do |item, index|
-      .question
-        input.question__input id="tab-#{index}" type="checkbox" name="tabs"
-        label.question__label for="tab-#{index}" = item.title
-        .question__answer
-          p = item.paragraph
-    .section__spacer--big
-  .container.container--small.text-align-center
-    .title.title--tertiary Sobrou alguma dúvida?
-    = link_to whatsapp('Olá, tenho uma dúvida sobre o serviço de registro do droneiro.com!'), class: 'btn btn--secondary', target: '_blank' do
-      .fa.fa-lg.fa-whatsapp
-      | Fale com a gente!
-
-.section.section--dark.section--big
+.section.section--small.section--white
   .container.text-align-center
-    .drone.drone--big
-      - 4.times
-        span
-      = image_tag 'drone-miniature.svg'
-    .section__spacer--small
-    .title.title--primary Pronto pra voar?
-    .section__spacer
-    = link_to '/cadastro', class: 'btn' do
-      .fa.fa-lg.fa-rocket
-      | QUERO REGISTRAR MEU DRONE
-  = image_tag 'hero-bg.png', class: 'hero__background'
-  .hero__detail Já ajudamos <b>#{data.global.ajuda.droneiros}</b> droneiros com <b>#{data.global.ajuda.registros}</b> registros.
+    h2.title.title--tertiary droneiro.com — 2017
 
 = stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', media: 'all'

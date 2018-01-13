@@ -1,8 +1,10 @@
 site_url: https://droneiro.com
-site_name: Droneiro.com — Voe tranquilamente com seu drone
+site_name: droneiro.com — Voe tranquilamente com seu drone
 site_description: Cuidamos de toda a burocracia necessária pra que você possa curtir seu drone com segurança e responsabilidade.
 phone: 61996633052
 ga_code: UA-72298904-7
+
+plataforma: https://app.droneiro.com/
 
 ajuda:
   droneiros: 138

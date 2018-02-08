@@ -29,7 +29,14 @@
     h2.title--tertiary Os melhores pilotos e oportunidades de jobs estão aqui.<br class="no-small"> Mostre o seu trabalho e se torne um profissional.
     = link_to 'CONHEÇA NOSSA PLATAFORMA', data.global.plataforma, class: 'btn', target: '_blank'
 
-.section
+.section.section--center-on-small
+  .container
+    h1.title.title--primary.title--primary-small Checklist de Vôo — App
+    .hero__divisor.hero__divisor--dark
+    h2.title--tertiary Use checklists de vôo para não se esquecer de nada nos seus vôos.
+    = link_to 'USAR O APP', 'https://checklist.droneiro.com/', class: 'btn', target: '_blank'
+
+.section.section--white
   .container.text-align-center
     h1.title.title--primary.title--primary-small Nosso Blog
     .section__spacer.section__spacer--small
@@ -42,7 +49,7 @@
             .article__title.title.title--secondary = post[1].title
             .article__author Por #{data.medium.payload.references.User[post[1].creatorId].name}
 
-.section.section--small.section--white
+.section.section--small
   .container.text-align-center
     h2.title.title--tertiary droneiro.com — 2017
 

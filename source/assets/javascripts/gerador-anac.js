@@ -14,7 +14,6 @@ $(document).ready(function(){
   });
   $(".js-save").click(function() {
     html2canvas($(".js-playground"), {
-      logging: true,
       useCORS: true,
       onrendered: function(canvas) {
         var a = document.createElement('a');
@@ -26,6 +25,10 @@ $(document).ready(function(){
       }
     });
   });
+  uploadcare.registerTab('preview', uploadcareTabEffects)
+  uploadcare.start({
+    effects: UPLOADCARE_EFFECTS,
+  })
   updatePreviews();
 })
 
@@ -58,5 +61,5 @@ function updatePreviews() {
 }
 
 function parameterize(str) {
-    return str.trim().toLowerCase().replace(/[^a-zA-Z0-9 -]/, "").replace(/\s/g, "-");
+  return str.trim().toLowerCase().replace(/[^a-zA-Z0-9 -]/, "").replace(/\s/g, "-");
 };

@@ -1,0 +1,44 @@
+---
+title: Gerador Anac
+---
+
+.section
+  .container.text-align-center
+    .title.title--primary.title--primary-small Oi, Carol!
+    .title.title--secondary Insira as imagens abaixo.
+    .section__spacer
+    .div
+      .title.title--quaternary Drone
+      input.js-document-upload type='hidden' role='uploadcare-uploader' data-crop="" data-image-shrink="1024x1024" data-clearable='' data-preview-step='' data-file='drone' value='https://ucarecdn.com/5fa8b77b-5a7b-46ce-9cc9-43682f3f92ba/'
+
+    .section__spacer--small
+    .div
+      .title.title--quaternary Etiqueta do fabricante
+      input.js-document-upload type='hidden' role='uploadcare-uploader' data-crop="1:1" data-image-shrink="1024x1024" data-clearable='' data-preview-step='' data-file='serial' value='https://ucarecdn.com/4e0f8f7a-dfb1-41f1-9f13-92aa11863794/-/crop/488x488/713,407/-/preview/'
+
+.section.section--white
+  .container.text-align-center
+    .title.title--primary.title--primary-small Posicione as imagens
+    .section__spacer
+    .playground
+      .js-playground
+        img.js-document-preview data-file='drone'
+        .playground__serial.js-serial.js-document-preview data-file='serial'
+
+.section
+  .container.text-align-center
+    .title.title--primary.title--primary-small Agora é só fazer o download!
+    .section__spacer
+    .btn.js-save Fazer Download
+
+= javascript_include_tag 'https://ucarecdn.com/libs/widget/3.2.1/uploadcare.full.min.js', 'data-turbolinks-track': 'reload', charset: "utf-8"
+javascript:
+    UPLOADCARE_PUBLIC_KEY = 'ab78871f58e7a754c623';
+    UPLOADCARE_LOCALE = 'pt';
+    UPLOADCARE_TABS = 'all';
+    UPLOADCARE_IMAGES_ONLY = true;
+
+= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js'
+= javascript_include_tag 'http://code.jquery.com/ui/1.12.1/jquery-ui.min.js'
+= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js'
+= javascript_include_tag 'gerador-anac.js'

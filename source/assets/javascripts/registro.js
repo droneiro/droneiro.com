@@ -39,7 +39,7 @@ function getDiagnostic(data) {
   var message = "",
       anatelMessage = "",
       userRegistros = [],
-      valorTotal = 29;
+      valorTotal = 49;
 
   var registros = {
     anatel: {

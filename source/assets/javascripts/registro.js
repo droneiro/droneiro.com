@@ -48,7 +48,7 @@ function getDiagnostic(data) {
       instrucoes: "<a href='https://www.multidrones.com.br/2017/03/14/homologao-de-drones-pela-anatel-tudo-o-que-voc-precisa-saber/' target='_blank'>● Multidrones - Tudo o que você precisa saber sobre a homologação da Anatel</a><a href='http://www.anatel.gov.br/Portal/verificaDocumentos/documento.asp?numeroPublicacao=346061&pub=original&filtro=1&documentoPath=346061.pdf' target='_blank'>● Manual do Usuário Solicitante - Declaração de Conformidade para quadricóptero (DRONE)</a><br>",
       sigla: "Agência Nacional de Telecomunicações",
       valorOrgao: 200,
-      valor: 70
+      valor: 99
     },
     anac: {
       title: 'Anac - SISANT',

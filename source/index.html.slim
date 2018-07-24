@@ -1,56 +1,35 @@
-.header
-  = link_to '/', class: 'header__logo' do
-    = image_tag 'droneiro-com.svg'
-
-.hero.hero--full.section--purple
-  .container.text-align-center
-    .drone
-      - 4.times
-        span
-      = image_tag 'drone-miniature.svg'
-    .section__spacer--small
-    h1.title.title--primary Você voa e nós<br> cuidamos de todo o resto
-    .hero__divisor
-    h2.title.title--tertiary A droneiro.com foi criada para resolver os principais<br class="no-small"> problemas dos proprietários de drone no Brasil.
-  = image_tag 'hero-bg.png', class: 'hero__background'
-
-.section.section--center-on-small
+.section.section--dark-purple
   .container
-    h3.title.title--secondary Ainda sem registros?
-    h1.title.title--primary.title--primary-small Voe tranquilamente<br> com seu drone
-    .hero__divisor.hero__divisor--dark
-    h2.title--tertiary Cuidamos de toda a burocracia necessária pra que<br class="no-small"> você possa curtir seu drone com segurança e responsabilidade.
-    = link_to 'QUERO REGISTRAR MEU DRONE', '/registros', class: 'btn'
+    .text-align-center
+      = link_to '/' do
+        = image_tag 'droneiro-com.svg', width: 200
+    .section__spacer
+    .service__container
+      - data.global.services.each do |service|
+        = link_to service.link, class: 'service', target: '_new' do
+          .service__content
+            .service__icon.fa.fa-3x class="fa-#{service.icon}"
+            .service__info
+              .service__subtitle = service.subtitle
+              .service__title = service.title
 
-.section.section--white.section--center-on-small
-  .container
-    h1.title.title--primary.title--primary-small Ofereça e contrate<br class="no-small"> serviços de imagens aéreas
-    .hero__divisor.hero__divisor--dark
-    h2.title--tertiary Os melhores pilotos e oportunidades de jobs estão aqui.<br class="no-small"> Mostre o seu trabalho e se torne um profissional.
-    = link_to 'CONHEÇA NOSSA PLATAFORMA', data.global.plataforma, class: 'btn', target: '_blank'
+/ .section.section--small
+/   .container
+/     .title Checklist App
+/     = image_tag 'checklist-app.png', width: 500
 
-.section.section--center-on-small
-  .container
-    h1.title.title--primary.title--primary-small Checklist de Vôo — App
-    .hero__divisor.hero__divisor--dark
-    h2.title--tertiary Use checklists de vôo para não se esquecer de nada nos seus vôos.
-    = link_to 'USAR O APP', 'https://checklist.droneiro.com/', class: 'btn', target: '_blank'
+.section
+  .title.title--tab.text-align-center Últimas do Blog
+  .section__spacer
+  .article__container
+    - data.medium.payload.references.Post.each do |post|
+      = link_to "https://medium.com/droneiro-com/#{post[1].uniqueSlug}", class: 'article', target: '_new' do
+        .article__image.bg-center-cover style="background-image: url('https://cdn-images-1.medium.com/max/1400/#{post[1].virtuals.previewImage.imageId}')"
+        .article__title = post[1].title
+        .article__subtitle = post[1].virtuals.subtitle
 
-.section.section--white
+.section.section--small.section--white
   .container.text-align-center
-    h1.title.title--primary.title--primary-small Nosso Blog
-    .section__spacer.section__spacer--small
-    h3.title.title--secondary Dicas de pilotagem e imagens aéreas com drones
-    .section__spacer.section__spacer--big
-    .article__container
-      - data.medium.payload.references.Post.each do |post|
-        = link_to "https://medium.com/officeless/#{post[1].uniqueSlug}", class: 'article bg-center-cover', target: '_new', style: "background-image: url(https://cdn-images-1.medium.com/max/1400/#{(post[1].virtuals.previewImage.imageId.empty? ? '1*SpUNoYmMyNTynhkKcY4a7Q@2x.jpeg' : post[1].virtuals.previewImage.imageId)})" do
-          .article__info
-            .article__title.title.title--secondary = post[1].title
-            .article__author Por #{data.medium.payload.references.User[post[1].creatorId].name}
+    h2.title.title--tertiary droneiro.com — 2018
 
-.section.section--small
-  .container.text-align-center
-    h2.title.title--tertiary droneiro.com — 2017
-
-= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', media: 'all'
+= stylesheet_link_tag 'https://use.fontawesome.com/releases/v5.1.1/css/all.css', media: 'all'

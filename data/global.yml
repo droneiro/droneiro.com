@@ -9,3 +9,22 @@ plataforma: https://app.droneiro.com/
 ajuda:
   droneiros: 587
   registros: 939
+
+services:
+  - title: Aprenda sobre pilotagem
+    subtitle: Curso
+    icon: graduation-cap
+    link: https://curso.droneiro.com/quero
+  - title: Registre seu drone
+    subtitle: Registros
+    icon: passport
+    link: /registros
+  - title: Ofereça ou contrate imagens aéreas
+    subtitle: Plataforma
+    icon: exchange-alt
+    link: https://app.droneiro.com/
+  - title: Leia sobre pilotagem & imagens aéreas
+    subtitle: Blog
+    icon: book-open
+    link: https://medium.com/droneiro-com
+>>>>>>> Update homepage design

@@ -2,58 +2,37 @@
 /// @name article
 
 .article
-  display: block
+  margin: .6em
+  align-self: stretch
+  padding: 1.2em
+  background-color: white
+  border: 1px solid rgba(black, .1)
   border-radius: 6px
-  padding: 2em 0
-  flex-grow: 1
-  min-width: 45%
-  transition: .2s
-  box-shadow: 0 3px 6px rgba(black, .16), inset 0 0 0 50vw rgba(black, .9)
-  display: flex
-  flex-direction: column
-  justify-content: center
+
+.article__image
+  padding-bottom: 56.6%
+  border-radius: 6px
+  margin-bottom: .5em
 
   +bp(md)
-    padding: 4em 0
-    flex-basis: 0
-
-  &:hover, &:focus
-    box-shadow: 0 4px 20px rgba(black, .19), inset 0 0 0 50vw rgba($color-purple, 1)
-
-  &:nth-child(n+3)
-    +bp(md)
-      margin-top: 2em
-
-  &:nth-child(even)
-    +bp(lg)
-      margin-left: 2em
-
-  & + &
-    +bp(md-only)
-      margin-top: 1em
+    width: 300px
 
 .article__title
-  line-height: 1.4
-  max-width: 70%
+  font-weight: bolder
+  line-height: 1.2
+  color: black
 
-.article__info
-  padding: 20px
-  color: white
-
-.article__author
-  text-transform: uppercase
-  font-weight: bold
-  letter-spacing: .1em
-  font-size: .6em
-  margin: 1em 0
-
-.article__date
+.article__subtitle
   font-size: .7em
+  color: $color-bluegrey
+  line-height: 1.4
+  margin-top: .6em
 
 .article__container
   display: flex
   justify-content: stretch
-  flex-wrap: wrap
+  overflow-x: scroll
+  max-width: 100%
 
   +bp(md-only)
     flex-direction: column

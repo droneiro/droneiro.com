@@ -14,15 +14,23 @@ services:
   - title: Aprenda sobre pilotagem de drones
     subtitle: Curso
     icon: graduation-cap
-    link: https://curso.droneiro.com/quero
+    link: https://curso.droneiro.com/inscricao
   - title: Registre seu drone
     subtitle: Registros
     icon: passport
     link: /registros
-  - title: Ofereça ou contrate imagens aéreas
+  - title: Venda ou contrate imagens aéreas
     subtitle: Plataforma
     icon: exchange-alt
     link: https://app.droneiro.com/
+  - title: Compre drones & acessórios
+    subtitle: Loja
+    icon: shopping-cart
+    link: https://loja.droneiro.com
+  - title: Conserte seu equipamento
+    subtitle: Assistência
+    icon: medkit
+    link: https://assistencia.droneiro.com
   - title: Leia sobre pilotagem & imagens aéreas
     subtitle: Blog
     icon: book-open

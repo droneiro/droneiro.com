@@ -12,10 +12,16 @@
   padding: 2.4em
   background: linear-gradient(to right, #E77767, #F4BF8C)
   border-radius: 6px
-  min-height: 10em
+  min-height: 6em
   display: flex
   flex-direction: column
   justify-content: space-between
+
+  +bp(lg)
+    min-height: 8em
+
+  +bp(xl)
+    min-height: 10em
 
   .service:nth-child(2) &
     background: linear-gradient(to right, #599FE6, #73DAC5)
@@ -25,6 +31,12 @@
 
   .service:nth-child(4) &
     background: linear-gradient(to right, #875DE2, #DC61A9)
+
+  .service:nth-child(5) &
+    background: linear-gradient(to right, #E57373, #EF5350)
+
+  .service:nth-child(6) &
+    background: linear-gradient(to right, #90A4AE, #78909C)
 
   .service:hover &
     transform: scale(1.05)
@@ -40,8 +52,11 @@
   margin-bottom: .6em
 
 .service__title
-  font-size: 2em
+  font-size: 1.6em
   font-weight: bolder
+
+  +bp(md)
+    font-size: 2em
 
 .service__icon
   text-align: right

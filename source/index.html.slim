@@ -12,6 +12,14 @@
             .service__info
               .service__subtitle = service.subtitle
               .service__title = service.title
+  .container.text-align-center
+    .section__spacer--big
+    = link_to data.global.social.instagram, target: '_new' do
+      .fab.fa-2x.fa-instagram
+    = link_to data.global.social.facebook, target: '_new' do
+      .fab.fa-2x.fa-facebook-f
+    = link_to data.global.social.youtube, target: '_new' do
+      .fab.fa-2x.fa-youtube
 
 .section.section--white
   .container.text-align-center
@@ -24,7 +32,7 @@
 
 .section.section--dark-purple
   .container.container--smaller.text-align-center
-    h1.title.title--primary.title--primary-small 1º Concurso Nacional<br> de Fotografia Aérea
+    h1.title.title--primary.title--primary-small 1º Concurso Nacional<br class='no-small'> de Fotografia Aérea
     .hero__divisor
     h2.title--tertiary Nós aqui na droneiro.com adoramos fotografia aérea e achamos que ela precisa ganhar cada vez mais visibilidade. Foi por isso que decidimos criar o 1º Concurso Nacional de Fotografia Aérea e queremos muito que você participe dessa experiência conosco!
     .section__spacer
@@ -33,8 +41,6 @@
     = link_to 'Saiba como participar', 'https://medium.com/droneiro-com/participe-do-1%C2%BA-concurso-nacional-de-fotografia-a%C3%A9rea-32470e708331', class: 'btn btn--tertiary', target: '_blank'
 
 .section
-  .title.title--tab.text-align-center Últimas do Blog
-  .section__spacer
   .article__container
     - data.medium.payload.references.Post.each do |post|
       = link_to "https://medium.com/droneiro-com/#{post[1].uniqueSlug}", class: 'article', target: '_new' do

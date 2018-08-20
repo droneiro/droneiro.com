@@ -40,11 +40,14 @@
     .section__spacer
     = link_to 'Saiba como participar', 'https://medium.com/droneiro-com/participe-do-1%C2%BA-concurso-nacional-de-fotografia-a%C3%A9rea-32470e708331', class: 'btn btn--tertiary', target: '_blank'
 
-.section
-  .article__container
-    - data.medium.payload.references.Post.each do |post|
-      = link_to "https://medium.com/droneiro-com/#{post[1].uniqueSlug}", class: 'article', target: '_new' do
-        .article__image.bg-center-cover style="background-image: url('https://cdn-images-1.medium.com/max/1400/#{post[1].virtuals.previewImage.imageId}')"
+.article__container
+  - data.medium.payload.references.Post.each do |post|
+    = link_to "https://medium.com/droneiro-com/#{post[1].uniqueSlug}", class: 'article bg-center-cover', target: '_new', style: "background-image: url('https://cdn-images-1.medium.com/max/1400/#{post[1].virtuals.previewImage.imageId}')" do
+      .article__content.flex
+        .fa.fa-book-open
+        .article__type Artigo
+      .article__content
+        .article__image
         .article__title = post[1].title
         .article__subtitle = post[1].virtuals.subtitle
 

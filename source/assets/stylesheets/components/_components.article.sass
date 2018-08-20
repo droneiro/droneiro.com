@@ -2,37 +2,45 @@
 /// @name article
 
 .article
-  margin: .6em
-  align-self: stretch
-  padding: 1.2em
-  background-color: white
-  border: 1px solid rgba(black, .1)
-  border-radius: 6px
+  width: 100%
+  display: flex
+  color: white
+  min-height: 16em
+  box-shadow: inset 0 0 0 50vw rgba(black, .7)
+  flex-direction: column
+  justify-content: space-around
+  transition: .2s
 
-.article__image
-  padding-bottom: 56.6%
-  border-radius: 6px
-  margin-bottom: .5em
+  &:hover
+    box-shadow: inset 0 0 0 50vw rgba($color-purple, .9)
 
   +bp(md)
-    width: 300px
+    width: 50%
+
+  +bp(lg)
+    width: 33.3333333%
+
+.article__content
+  padding: 2em
 
 .article__title
-  font-weight: bolder
-  line-height: 1.2
-  color: black
+  font-weight: 900
+  font-size: 1.5em
 
 .article__subtitle
-  font-size: .7em
-  color: $color-bluegrey
+  margin-top: .8em
+  color: darken(white, 20deg)
+  font-size: .8em
   line-height: 1.4
-  margin-top: .6em
+
+.article__type
+  text-transform: uppercase
+  letter-spacing: .2em
+  font-size: .6em
+  align-self: center
+  margin-left: .8em
 
 .article__container
   display: flex
-  justify-content: stretch
-  overflow-x: scroll
-  max-width: 100%
-
-  +bp(md-only)
-    flex-direction: column
+  align-items: stretch
+  flex-wrap: wrap

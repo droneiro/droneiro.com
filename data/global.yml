@@ -30,7 +30,7 @@ services:
   - title: Conserte seu equipamento
     subtitle: Assistência
     icon: medkit
-    link: https://assistencia.droneiro.com
+    link: https://sos.droneiro.com
   - title: Leia sobre pilotagem & imagens aéreas
     subtitle: Blog
     icon: book-open

@@ -13,10 +13,24 @@
               .service__subtitle = service.subtitle
               .service__title = service.title
 
-/ .section.section--small
-/   .container
-/     .title Checklist App
-/     = image_tag 'checklist-app.png', width: 500
+.section.section--white
+  .container.text-align-center
+    = image_tag 'checklist-app-icon.png', width: 80, class: 'border-radius'
+    .section__spacer--small
+    h1.title.title--primary.title--primary-small App Checklist de Vôo
+    .hero__divisor.hero__divisor--dark
+    h2.title--tertiary Use checklists de vôo para não se esquecer de nada.
+    = link_to 'USAR O APP', 'https://checklist.droneiro.com/', class: 'btn btn--tertiary', target: '_blank'
+
+.section.section--dark-purple
+  .container.container--smaller.text-align-center
+    h1.title.title--primary.title--primary-small 1º Concurso Nacional<br> de Fotografia Aérea
+    .hero__divisor
+    h2.title--tertiary Nós aqui na droneiro.com adoramos fotografia aérea e achamos que ela precisa ganhar cada vez mais visibilidade. Foi por isso que decidimos criar o 1º Concurso Nacional de Fotografia Aérea e queremos muito que você participe dessa experiência conosco!
+    .section__spacer
+    .title--quaternary.font-small Acompanhe #{link_to '#concursodroneiro2018', 'https://www.instagram.com/explore/tags/concursodroneiro2018/'} no instagram
+    .section__spacer
+    = link_to 'Saiba como participar', 'https://medium.com/droneiro-com/participe-do-1%C2%BA-concurso-nacional-de-fotografia-a%C3%A9rea-32470e708331', class: 'btn btn--tertiary', target: '_blank'
 
 .section
   .title.title--tab.text-align-center Últimas do Blog

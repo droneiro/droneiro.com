@@ -1,0 +1,49 @@
+/// @group components
+/// @name notification
+
+.notification
+  margin: 1em
+  background-color: white
+  padding: .6em 1.2em
+  border-radius: 3em
+  display: flex
+  justify-content: center
+  box-shadow: 0 0 20px rgba(black, .19)
+  animation: popup .6s cubic-bezier(.75,-0.5,0,1.75) 2s forwards
+  transform: translateX(120%)
+
+  > *
+    align-self: center
+
+.notification__icon
+  margin-right: .6em
+  color: $color-magenta
+
+.notification__title
+  text-transform: uppercase
+  letter-spacing: .2em
+  font-size: .6em
+  opacity: .6
+
+.notification__description
+  font-size: .8em
+  margin-top: .3em
+
+@keyframes popup
+  from
+    transform: translateX(120%)
+  to
+    transform: translateY(0%)
+
+.notification__container
+  display: flex
+  justify-content: center
+  position: fixed
+  bottom: 0
+  left: 0
+  right: 0
+  overflow: hidden
+  z-index: 1
+
+  +bp(md)
+    justify-content: flex-end

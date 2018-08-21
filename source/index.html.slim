@@ -55,4 +55,11 @@
   .container.text-align-center
     h2.title.title--tertiary droneiro.com — 2018
 
+.notification__container
+  = link_to data.global.ebooks.baterias, target: '_new', class: 'notification' do
+    .notification__icon.fa.fa-lg.fa-book-open
+    .notification__info
+      .notification__title Ebook Gratuito
+      .notification__description Como Cuidar das Baterias do seu Drone
+
 = stylesheet_link_tag 'https://use.fontawesome.com/releases/v5.1.1/css/all.css', media: 'all'

@@ -45,6 +45,11 @@ end
 # ----------------------------------------------
 page "/sitemap.xml", :layout => false
 
+# Redirects
+# ----------------------------------------------
+redirect "registros.html", to: 'https://registro.droneiro.com/'
+redirect "cadastro.html", to: 'https://registro.droneiro.com/cadastro'
+
 # Development-specific configuration
 # ----------------------------------------------
 configure :development do
